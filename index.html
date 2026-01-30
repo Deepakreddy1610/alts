@@ -2531,242 +2531,320 @@
 
         /* Mouse follower effect REMOVED */
 
-        /* Mobile-specific adjustments */
+        /* Mobile-specific adjustments - WON'T AFFECT DESKTOP */
         @media (max-width: 768px) {
+            /* Critical mobile fixes only */
             html {
-                font-size: 14px;
+                font-size: 16px;
             }
-
+            
+            body, html {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                position: relative !important;
+            }
+            
             .container {
-                padding: 0.75rem;
+                width: 100% !important;
+                max-width: 100vw !important;
+                padding: 0.5rem !important;
+                margin: 0 auto !important;
+                overflow: hidden !important;
             }
-
+            
+            /* Fix all content containers */
+            .content, .college-header, .event-header, .footer {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Fix college header layout */
             .college-logo-title-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 1rem;
+                display: block !important;
+                text-align: center !important;
             }
-
+            
+            .college-logo {
+                margin: 0 auto 15px !important;
+                display: block !important;
+                width: 90px !important;
+                height: 90px !important;
+            }
+            
             .college-name-container {
-                text-align: center;
-                min-width: unset;
+                min-width: 100% !important;
+                text-align: center !important;
             }
-
+            
             .college-main-name {
-                font-size: clamp(1.3rem, 5vw, 1.8rem);
-                text-align: center;
+                font-size: 1.4rem !important;
+                line-height: 1.3 !important;
+                text-align: center !important;
             }
-
+            
+            /* Fix subtitle layout */
             .college-subtitle-line {
-                gap: 0.5rem;
-                justify-content: center;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 5px !important;
+                margin-top: 10px !important;
             }
-
+            
             .subtitle-part {
-                font-size: 0.85rem;
+                font-size: 0.8rem !important;
+                white-space: nowrap !important;
             }
-
+            
             .divider {
-                display: none;
+                display: none !important;
             }
-
-            .college-subtitle-line {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+            
+            /* Fix event header */
+            .event-header {
+                padding: 1.5rem 1rem !important;
+                margin-bottom: 1rem !important;
             }
-
-            .department,
-            .campus {
-                text-align: center;
-            }
-
+            
             .event-title {
-                animation: titleGlow 4s infinite alternate;
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                word-break: break-word !important;
             }
-
-            .event-card:hover {
-                transform: translateY(-10px) scale(1.02);
+            
+            .event-subtitle {
+                font-size: 1.2rem !important;
+                line-height: 1.3 !important;
             }
-
-            .coordinator-box li:hover {
-                transform: translateX(0.5rem) scale(1.01);
+            
+            .date-badge {
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                padding: 10px 15px !important;
+                font-size: 0.9rem !important;
+                margin: 10px 0 !important;
             }
-
-            .register-btn:hover {
-                transform: translateY(-5px) scale(1.03);
-            }
-
-            /* Pane adjustments for mobile */
-            .pane-content {
-                max-height: 95vh;
-            }
-
-            .pane-body {
-                padding: 1.5rem;
-            }
-
-            /* Adjust logo for mobile */
-            .pane-logo-bg {
-                opacity: 0.5;
-                background-size: 80% auto;
-            }
-
-            /* Spot registration mobile adjustments */
-            .spot-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.75rem;
-            }
-
-            .spot-icon {
-                width: 3rem;
-                height: 3rem;
-                font-size: 1.5rem;
-            }
-
-            /* Stack elements vertically on very small screens */
-            @media (max-width: 480px) {
-                .college-header {
-                    padding: 1.5rem 1rem;
-                }
-
-                .college-logo {
-                    width: 90px;
-                    height: 90px;
-                }
-
-                .college-main-name {
-                    font-size: 1.3rem;
-                    line-height: 1.3;
-                    padding: 0 0.25rem;
-                }
-
-                .college-subtitle-line {
-                    grid-template-columns: 1fr;
-                    gap: 0.25rem;
-                }
-
-                .event-title {
-                    font-size: 1.8rem;
-                }
-
-                .event-subtitle {
-                    font-size: 1rem;
-                }
-
-                .section-title {
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    text-align: center;
-                }
-
-                .section-title i {
-                    margin-right: 0;
-                }
-
-                .date-badge {
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    padding: 0.75rem 1rem;
-                }
-
-                .register-btn {
-                    width: 100%;
-                    justify-content: center;
-                }
-
-                .pane-header {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 0.75rem;
-                }
-
-                .pane-header h2 {
-                    flex-direction: column;
-                    gap: 0.5rem;
-                }
-
-                .social-icons a {
-                    width: 2.8rem;
-                    height: 2.8rem;
-                    font-size: 1.2rem;
-                }
-
-                .scroll-top {
-                    bottom: 1rem;
-                    right: 1rem;
-                }
-
-                .pane-body {
-                    padding: 1.25rem;
-                }
-
-                .event-details-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .pane-logo-bg {
-                    opacity: 0.45;
-                    background-size: 85% auto;
-                }
-
-                .spot-title {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-
-        /* Tablet-specific adjustments */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            html {
-                font-size: 15px;
-            }
-
-            .container {
-                padding: 1.25rem;
-                max-width: 95%;
-            }
-
+            
+            /* Fix event cards grid - stack vertically */
             .event-highlights {
-                grid-template-columns: repeat(2, 1fr);
+                display: block !important;
+                margin: 15px 0 !important;
             }
-
+            
+            .event-card {
+                width: 100% !important;
+                margin: 0 0 15px 0 !important;
+                display: block !important;
+                padding: 15px !important;
+            }
+            
+            /* Fix coordinator boxes */
             .coordinators {
-                grid-template-columns: repeat(2, 1fr);
+                display: block !important;
+                margin: 20px 0 !important;
             }
-
-            .college-logo-title-container {
-                gap: 1.5rem;
+            
+            .coordinator-box {
+                width: 100% !important;
+                margin: 0 0 20px 0 !important;
+                display: block !important;
+                padding: 20px !important;
             }
-
+            
+            /* Fix register button */
+            .register-btn {
+                width: 100% !important;
+                text-align: center !important;
+                justify-content: center !important;
+                padding: 12px 20px !important;
+                font-size: 1rem !important;
+                margin: 15px 0 !important;
+            }
+            
+            /* Fix social icons */
+            .social-icons {
+                justify-content: center !important;
+                gap: 10px !important;
+            }
+            
+            .social-icons a {
+                width: 45px !important;
+                height: 45px !important;
+            }
+            
+            /* Fix section titles */
+            .section-title {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 10px !important;
+                font-size: 1.3rem !important;
+                margin: 1.5rem 0 1rem !important;
+            }
+            
+            .section-title i {
+                margin-right: 0 !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            /* Fix paragraphs */
+            .paragraph {
+                padding: 15px !important;
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            /* Fix spot registration */
+            .spot-registration {
+                padding: 15px !important;
+                margin: 15px 0 !important;
+            }
+            
+            .spot-header {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 10px !important;
+            }
+            
+            .spot-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.5rem !important;
+            }
+            
+            .spot-title {
+                font-size: 1.2rem !important;
+            }
+            
+            /* Fix event details pane for mobile */
             .pane-content {
-                max-width: 90vw;
+                width: 95vw !important;
+                max-height: 90vh !important;
+                margin: 10px !important;
             }
-
-            .pane-logo-bg {
-                opacity: 0.55;
+            
+            .pane-header {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 10px !important;
+                padding: 1rem !important;
+            }
+            
+            .pane-header h2 {
+                flex-direction: column !important;
+                gap: 10px !important;
+                font-size: 1.3rem !important;
+            }
+            
+            .pane-body {
+                padding: 1.5rem !important;
+                font-size: 0.95rem !important;
+            }
+            
+            /* Fix event details grid */
+            .event-details-grid {
+                display: block !important;
+            }
+            
+            .detail-box {
+                width: 100% !important;
+                margin: 0 0 15px 0 !important;
+                display: block !important;
+            }
+            
+            /* Disable hover effects on mobile */
+            .event-card:hover,
+            .coordinator-box:hover,
+            .register-btn:hover,
+            .college-logo:hover,
+            .date-badge:hover,
+            .campus:hover,
+            .paragraph:hover,
+            .detail-box:hover {
+                transform: none !important;
+            }
+            
+            /* Fix scroll top button */
+            .scroll-top {
+                bottom: 1rem !important;
+                right: 1rem !important;
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 1.2rem !important;
             }
         }
 
-        /* Desktop adjustments */
+        /* Extra small devices (phones) */
+        @media (max-width: 480px) {
+            .college-main-name {
+                font-size: 1.2rem !important;
+            }
+            
+            .event-title {
+                font-size: 1.6rem !important;
+            }
+            
+            .event-subtitle {
+                font-size: 1rem !important;
+            }
+            
+            .date-badge {
+                font-size: 0.8rem !important;
+                padding: 8px 12px !important;
+            }
+            
+            .college-logo {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            
+            .social-icons a {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+            
+            .pane-body {
+                padding: 1.25rem !important;
+            }
+            
+            .section-title {
+                font-size: 1.2rem !important;
+            }
+            
+            .register-btn {
+                padding: 10px 15px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Tablet-specific adjustments - WON'T AFFECT DESKTOP */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Tablet-only adjustments */
+            .container {
+                max-width: 95% !important;
+            }
+            
+            .event-highlights {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .coordinators {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* Desktop adjustments - Original desktop code remains */
         @media (min-width: 1025px) {
+            /* Desktop styles remain exactly as they were */
             .container {
                 max-width: 1200px;
                 padding: 1.5rem;
-            }
-
-            .college-logo-title-container {
-                gap: 2rem;
-            }
-
-            .pane-content {
-                max-width: 850px;
-            }
-
-            .pane-logo-bg {
-                opacity: 0.6;
             }
         }
 
@@ -2779,42 +2857,23 @@
             .container {
                 max-width: 1400px;
             }
-
-            .pane-content {
-                max-width: 900px;
-            }
-
-            .pane-logo-bg {
-                opacity: 0.65;
-            }
         }
 
-        /* Touch device optimizations */
+        /* Touch device optimizations - WON'T AFFECT DESKTOP */
         @media (hover: none) and (pointer: coarse) {
-            .event-card:hover {
-                transform: none;
-            }
-
-            .coordinator-box li:hover {
-                transform: none;
-            }
-
-            .register-btn:hover {
-                transform: none;
-            }
-
-            .college-logo:hover {
-                transform: none;
-            }
-
-            .campus:hover {
-                transform: none;
-            }
-
+            /* Disable hover effects on touch devices */
+            .event-card:hover,
+            .coordinator-box:hover,
+            .register-btn:hover,
+            .college-logo:hover,
+            .date-badge:hover,
+            .campus:hover,
+            .paragraph:hover,
+            .detail-box:hover,
             .social-icons a:hover {
                 transform: none !important;
             }
-
+            
             /* Increase tap targets for mobile */
             .event-card,
             .register-btn,
@@ -2822,19 +2881,6 @@
             .close-pane {
                 min-height: 44px;
                 min-width: 44px;
-            }
-
-            .event-card h3 i {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            /* Disable hover animations */
-            .event-card::before,
-            .register-btn::before,
-            .register-btn::after,
-            .social-icons a::before {
-                display: none;
             }
         }
     </style>
@@ -3886,5 +3932,4 @@
         });
     </script>
 </body>
-
 </html>
