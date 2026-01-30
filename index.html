@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>E-Udbhav 2k26 - Technical Events</title>
+    <title>E-Udbhav 2k26 - Technical Events | ALITS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
@@ -20,6 +20,9 @@
             --glass: rgba(255, 255, 255, 0.08);
             --neon-blue: #00e5ff;
             --neon-pink: #ff4081;
+            --whatsapp: #25D366;
+            --instagram: #E4405F;
+            --youtube: #FF0000;
             
             /* Responsive font sizes */
             --font-scale: 1;
@@ -62,6 +65,29 @@
             100% { background-position: 0% 50%; }
         }
         
+        /* NEW: Animated stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -4;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 1; }
+        }
+        
         /* Animated circuit lines background */
         .circuit-lines {
             position: fixed;
@@ -79,11 +105,11 @@
         }
         
         @keyframes circuitPulse {
-            0% { opacity: 0.1; }
-            100% { opacity: 0.25; }
+            0% { opacity: 0.1; transform: scale(1); }
+            100% { opacity: 0.25; transform: scale(1.02); }
         }
         
-        /* Floating tech elements */
+        /* Floating tech elements - ENHANCED */
         .tech-elements {
             position: fixed;
             top: 0;
@@ -97,17 +123,18 @@
         .tech-element {
             position: absolute;
             font-size: 1.5rem;
-            opacity: 0.1;
+            opacity: 0.15;
             animation: floatElement 20s infinite linear;
             color: var(--neon-blue);
+            text-shadow: 0 0 10px currentColor;
         }
         
         @keyframes floatElement {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); }
+            100% { transform: translateY(-100px) rotate(360deg) scale(1); }
         }
         
-        /* Glowing particles */
+        /* Glowing particles - ENHANCED */
         .particles-container {
             position: fixed;
             top: 0;
@@ -134,6 +161,25 @@
             100% { transform: translateY(-100px) translateX(100px) scale(1); opacity: 0; }
         }
         
+        /* NEW: Floating text animation */
+        .floating-text {
+            position: absolute;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            opacity: 0.1;
+            animation: floatText 25s infinite linear;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes floatText {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+        
         /* Container */
         .container {
             width: 100%;
@@ -144,7 +190,7 @@
             z-index: 1;
         }
         
-        /* College Header with Enhanced Design */
+        /* College Header with Enhanced Design - MORE ANIMATIONS */
         .college-header {
             text-align: center;
             padding: 2rem 1.5rem;
@@ -160,13 +206,20 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: headerEntrance 1s ease-out;
+        }
+        
+        @keyframes headerEntrance {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .college-header:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.005);
             box-shadow: 
                 0 35px 80px rgba(0, 0, 0, 0.5),
                 0 0 40px rgba(0, 229, 255, 0.3),
+                0 0 60px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
@@ -198,11 +251,6 @@
             animation: gradientFlow 3s infinite linear;
         }
         
-        @keyframes gradientFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 300% 0%; }
-        }
-        
         .college-logo-title-container {
             display: flex;
             align-items: center;
@@ -229,6 +277,12 @@
             flex-shrink: 0;
             position: relative;
             overflow: hidden;
+            animation: logoFloat 3s infinite ease-in-out;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
         .college-logo::before {
@@ -254,13 +308,14 @@
             box-shadow: 
                 0 0 50px rgba(255, 152, 0, 0.6),
                 0 15px 45px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(124, 77, 255, 0.4),
                 inset 0 0 30px rgba(255, 152, 0, 0.2);
             animation: logoPulse 1s infinite alternate;
         }
         
         @keyframes logoPulse {
-            0% { box-shadow: 0 0 50px rgba(255, 152, 0, 0.6), 0 15px 45px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 152, 0, 0.2); }
-            100% { box-shadow: 0 0 60px rgba(255, 152, 0, 0.8), 0 20px 55px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(255, 152, 0, 0.3); }
+            0% { box-shadow: 0 0 50px rgba(255, 152, 0, 0.6), 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 77, 255, 0.4), inset 0 0 30px rgba(255, 152, 0, 0.2); }
+            100% { box-shadow: 0 0 60px rgba(255, 152, 0, 0.8), 0 20px 55px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.6), inset 0 0 40px rgba(255, 152, 0, 0.3); }
         }
         
         .college-name-container {
@@ -292,6 +347,12 @@
             display: inline-block;
             width: 100%;
             padding: 0 0.5rem;
+            animation: nameGlow 3s infinite alternate;
+        }
+        
+        @keyframes nameGlow {
+            0% { text-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 30px rgba(0, 229, 255, 0.4), 0 2px 5px rgba(0, 0, 0, 0.3); }
+            100% { text-shadow: 0 0 20px rgba(0, 229, 255, 1), 0 0 40px rgba(0, 229, 255, 0.6), 0 2px 5px rgba(0, 0, 0, 0.3); }
         }
         
         .college-main-name::after {
@@ -308,7 +369,7 @@
                 var(--neon-blue), 
                 transparent);
             border-radius: 2px;
-            animation: underlinePulse 2s infinite alternate;
+            animation: underlinePulse 3s infinite alternate;
         }
         
         @keyframes underlinePulse {
@@ -330,6 +391,12 @@
             margin-top: 0.75rem;
             flex-wrap: wrap;
             line-height: 1.4;
+            animation: subtitleSlide 1s ease-out;
+        }
+        
+        @keyframes subtitleSlide {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .subtitle-part {
@@ -337,11 +404,23 @@
             align-items: center;
             gap: 0.25rem;
             white-space: nowrap;
+            animation: partFadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes partFadeIn {
+            to { opacity: 1; }
         }
         
         .divider {
             color: rgba(0, 229, 255, 0.5);
             font-weight: 300;
+            animation: dividerBlink 2s infinite;
+        }
+        
+        @keyframes dividerBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
         
         .award-icon {
@@ -351,8 +430,9 @@
         }
         
         @keyframes awardFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(-5deg); }
+            75% { transform: translateY(-3px) rotate(5deg); }
         }
         
         .department {
@@ -375,6 +455,12 @@
             border-radius: 10px;
             position: relative;
             overflow: hidden;
+            animation: departmentEntrance 1s ease-out 0.2s both;
+        }
+        
+        @keyframes departmentEntrance {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .department::before {
@@ -413,12 +499,18 @@
             max-width: 600px;
             margin: 0 auto;
             transition: all 0.3s ease;
+            animation: campusEntrance 1s ease-out 0.4s both;
+        }
+        
+        @keyframes campusEntrance {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .campus:hover {
             background: rgba(26, 35, 126, 0.5);
             border-color: rgba(0, 229, 255, 0.4);
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
@@ -433,7 +525,7 @@
             100% { transform: scale(1.1); }
         }
         
-        /* Event Header - Below College Name */
+        /* Event Header - Below College Name - ENHANCED */
         .event-header {
             text-align: center;
             padding: clamp(2rem, 5vw, 3.75rem) clamp(1rem, 3vw, 2.5rem);
@@ -449,13 +541,20 @@
             overflow: hidden;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             width: 100%;
+            animation: eventHeaderEntrance 1.5s ease-out 0.6s both;
+        }
+        
+        @keyframes eventHeaderEntrance {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .event-header:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.005);
             box-shadow: 
                 0 35px 80px rgba(0, 0, 0, 0.5),
                 0 0 30px rgba(255, 152, 0, 0.2),
+                0 0 40px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
@@ -471,6 +570,12 @@
                 var(--highlight2), 
                 var(--highlight3), 
                 var(--neon-blue));
+            animation: headerLineFlow 3s infinite linear;
+        }
+        
+        @keyframes headerLineFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
         
         .event-header::after {
@@ -484,7 +589,7 @@
             background: radial-gradient(circle, rgba(255, 152, 0, 0.2) 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
-            animation: pulseGlow 3s infinite alternate;
+            animation: pulseGlow 4s infinite alternate;
         }
         
         @keyframes pulseGlow {
@@ -506,6 +611,12 @@
             line-height: 1.2;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            animation: titleGlow 4s infinite alternate, titleEntrance 2s ease-out 0.8s both;
+        }
+        
+        @keyframes titleEntrance {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
         
         @keyframes titleGlow {
@@ -521,9 +632,15 @@
             margin-bottom: 1.5rem;
             letter-spacing: clamp(0.5px, 0.5vw, 2px);
             line-height: 1.3;
+            animation: subtitleEntrance 1.5s ease-out 1s both;
         }
         
-        /* Date Badge */
+        @keyframes subtitleEntrance {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Date Badge - ENHANCED */
         .date-badge {
             display: inline-flex;
             align-items: center;
@@ -545,22 +662,26 @@
             overflow: hidden;
             z-index: 1;
             transition: all 0.4s ease;
-            animation: badgeFloat 4s infinite ease-in-out;
-            flex-wrap: wrap;
-            width: fit-content;
-            max-width: 100%;
+            animation: badgeFloat 5s infinite ease-in-out, badgeEntrance 1s ease-out 1.2s both;
+        }
+        
+        @keyframes badgeEntrance {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
         
         @keyframes badgeFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-1deg); }
+            75% { transform: translateY(-10px) rotate(1deg); }
         }
         
         .date-badge:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(2deg);
             box-shadow: 
                 0 15px 40px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(255, 87, 34, 0.5);
+                0 0 30px rgba(255, 87, 34, 0.5),
+                0 0 40px rgba(124, 77, 255, 0.3);
         }
         
         .date-badge::before {
@@ -570,17 +691,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 87, 34, 0.2));
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 87, 34, 0.2), rgba(124, 77, 255, 0.2));
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: -1;
+            animation: badgeShine 4s infinite linear;
+        }
+        
+        @keyframes badgeShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .date-badge:hover::before {
             opacity: 1;
         }
         
-        /* Content Sections */
+        /* Content Sections - ENHANCED */
         .content {
             background: rgba(10, 14, 41, 0.8);
             backdrop-filter: blur(20px);
@@ -594,6 +721,12 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            animation: contentEntrance 1s ease-out 1.4s both;
+        }
+        
+        @keyframes contentEntrance {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .content::before {
@@ -606,6 +739,7 @@
             background: radial-gradient(circle, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
+            animation: orbRotate 30s infinite linear;
         }
         
         .content::after {
@@ -618,6 +752,12 @@
             background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
+            animation: orbRotate 35s infinite linear reverse;
+        }
+        
+        @keyframes orbRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .section-title {
@@ -633,6 +773,12 @@
             align-items: center;
             text-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
             line-height: 1.3;
+            animation: sectionTitleEntrance 0.8s ease-out both;
+        }
+        
+        @keyframes sectionTitleEntrance {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
         }
         
         .section-title::before {
@@ -643,6 +789,12 @@
             width: 100px;
             height: 3px;
             background: linear-gradient(90deg, var(--highlight), transparent);
+            animation: titleLineExtend 3s infinite alternate;
+        }
+        
+        @keyframes titleLineExtend {
+            0% { width: 100px; }
+            100% { width: 150px; }
         }
         
         .section-title i {
@@ -658,6 +810,12 @@
             border: 2px solid rgba(0, 229, 255, 0.3);
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            animation: iconPulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 229, 255, 0.4); }
         }
         
         .paragraph {
@@ -673,13 +831,20 @@
             transition: all 0.4s ease;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
+            animation: paragraphEntrance 0.8s ease-out both;
+        }
+        
+        @keyframes paragraphEntrance {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .paragraph:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.005);
             box-shadow: 
                 0 15px 30px rgba(0, 0, 0, 0.2),
-                0 0 20px rgba(255, 152, 0, 0.1);
+                0 0 20px rgba(255, 152, 0, 0.1),
+                0 0 30px rgba(124, 77, 255, 0.1);
             border-left-color: var(--neon-blue);
         }
         
@@ -688,6 +853,12 @@
             font-weight: 600;
             position: relative;
             padding: 0 0.25rem;
+            animation: highlightPulse 3s infinite;
+        }
+        
+        @keyframes highlightPulse {
+            0%, 100% { text-shadow: 0 0 5px var(--neon-blue); }
+            50% { text-shadow: 0 0 15px var(--neon-blue); }
         }
         
         .highlight::before {
@@ -709,7 +880,7 @@
             transform-origin: left;
         }
         
-        /* Event Cards */
+        /* Event Cards - ENHANCED */
         .event-highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -732,6 +903,19 @@
             z-index: 1;
             cursor: pointer;
             width: 100%;
+            animation: cardEntrance 0.8s ease-out both;
+        }
+        
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .event-card:nth-child(3) { animation-delay: 0.3s; }
+        .event-card:nth-child(4) { animation-delay: 0.4s; }
+        .event-card:nth-child(5) { animation-delay: 0.5s; }
+        .event-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes cardEntrance {
+            0% { transform: translateY(50px) scale(0.9); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
         }
         
         .event-card::before {
@@ -748,10 +932,11 @@
         }
         
         .event-card:hover {
-            transform: translateY(-20px) scale(1.03);
+            transform: translateY(-20px) scale(1.03) rotate(1deg);
             box-shadow: 
                 0 25px 60px rgba(0, 0, 0, 0.3),
                 0 0 40px rgba(255, 152, 0, 0.2),
+                0 0 50px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 152, 0, 0.3);
         }
@@ -785,6 +970,12 @@
             border: 2px solid rgba(255, 152, 0, 0.3);
             transition: all 0.4s ease;
             flex-shrink: 0;
+            animation: cardIconFloat 4s infinite ease-in-out;
+        }
+        
+        @keyframes cardIconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
         
         .event-card:hover h3 i {
@@ -793,6 +984,7 @@
             background: rgba(0, 229, 255, 0.1);
             transform: rotate(15deg) scale(1.1);
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+            animation: none;
         }
         
         .event-card p {
@@ -816,9 +1008,10 @@
         .event-card:hover .read-more {
             opacity: 1;
             gap: 0.75rem;
+            transform: translateX(5px);
         }
         
-        /* EVENT DETAIL PANE/MODAL - HIGH CLARITY LOGOS */
+        /* EVENT DETAIL PANE/MODAL - ENHANCED */
         .event-detail-pane {
             position: fixed;
             top: 0;
@@ -835,6 +1028,12 @@
             visibility: hidden;
             transition: all 0.5s ease;
             padding: 1rem;
+            animation: paneOverlay 0.5s ease;
+        }
+        
+        @keyframes paneOverlay {
+            from { background: rgba(0, 0, 0, 0); }
+            to { background: rgba(0, 0, 0, 0.95); }
         }
         
         .event-detail-pane.active {
@@ -852,6 +1051,7 @@
             box-shadow: 
                 0 40px 100px rgba(0, 0, 0, 0.7),
                 0 0 60px rgba(255, 152, 0, 0.3),
+                0 0 80px rgba(124, 77, 255, 0.2),
                 inset 0 0 20px rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
@@ -859,9 +1059,15 @@
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
+            animation: paneContentGlow 4s infinite alternate;
         }
         
-        /* Logo Background - MAXIMUM CLARITY */
+        @keyframes paneContentGlow {
+            0% { box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(255, 152, 0, 0.3), 0 0 80px rgba(124, 77, 255, 0.2); }
+            100% { box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 80px rgba(255, 152, 0, 0.4), 0 0 100px rgba(124, 77, 255, 0.3); }
+        }
+        
+        /* Logo Background - ENHANCED */
         .pane-logo-bg {
             position: absolute;
             top: 50%;
@@ -869,15 +1075,20 @@
             transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
-            background-size: 70% auto; /* Large logo size */
+            background-size: 70% auto;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.6; /* High opacity for maximum visibility */
+            opacity: 0.6;
             z-index: 1;
             transition: all 0.5s ease;
-            /* Enhanced filters for maximum clarity */
             filter: brightness(1.2) contrast(1.3) saturate(1.1);
             pointer-events: none;
+            animation: logoBgPulse 5s infinite alternate;
+        }
+        
+        @keyframes logoBgPulse {
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+            100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.05); }
         }
         
         /* Make overlay lighter for better logo visibility */
@@ -889,7 +1100,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, 
-                rgba(10, 14, 41, 0.5) 0%,        /* Very light overlay */
+                rgba(10, 14, 41, 0.5) 0%,
                 rgba(10, 14, 41, 0.45) 30%,
                 rgba(10, 14, 41, 0.4) 50%,
                 rgba(10, 14, 41, 0.45) 70%,
@@ -914,6 +1125,12 @@
             z-index: 0;
             pointer-events: none;
             filter: blur(10px);
+            animation: paneGlowRotate 30s infinite linear;
+        }
+        
+        @keyframes paneGlowRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
         
         .event-detail-pane.active .pane-content {
@@ -933,6 +1150,12 @@
             position: relative;
             z-index: 3;
             backdrop-filter: blur(5px);
+            animation: paneHeaderEntrance 0.5s ease-out 0.2s both;
+        }
+        
+        @keyframes paneHeaderEntrance {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .pane-header h2 {
@@ -960,6 +1183,12 @@
             flex-shrink: 0;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
             box-shadow: 0 0 25px rgba(255, 152, 0, 0.3);
+            animation: paneIconSpin 15s infinite linear;
+        }
+        
+        @keyframes paneIconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .close-pane {
@@ -979,6 +1208,12 @@
             position: relative;
             z-index: 3;
             box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+            animation: closeBtnPulse 3s infinite;
+        }
+        
+        @keyframes closeBtnPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 87, 34, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 87, 34, 0.5); }
         }
         
         .close-pane:hover {
@@ -986,6 +1221,7 @@
             border-color: rgba(255, 87, 34, 0.7);
             transform: rotate(90deg) scale(1.1);
             box-shadow: 0 0 30px rgba(255, 87, 34, 0.5);
+            animation: none;
         }
         
         .pane-body {
@@ -995,8 +1231,13 @@
             font-size: clamp(1rem, 2.5vw, 1.2rem);
             position: relative;
             z-index: 3;
-            /* Add text shadow for better readability over logo */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            animation: paneBodyEntrance 0.5s ease-out 0.4s both;
+        }
+        
+        @keyframes paneBodyEntrance {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .pane-body::-webkit-scrollbar {
@@ -1011,6 +1252,12 @@
         .pane-body::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, var(--highlight), var(--highlight2));
             border-radius: 4px;
+            animation: scrollThumbGlow 3s infinite alternate;
+        }
+        
+        @keyframes scrollThumbGlow {
+            0% { box-shadow: 0 0 5px var(--highlight); }
+            100% { box-shadow: 0 0 15px var(--highlight); }
         }
         
         .pane-body h3 {
@@ -1023,6 +1270,7 @@
             border-bottom: 2px solid rgba(0, 229, 255, 0.3);
             line-height: 1.3;
             text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+            animation: paneH3Entrance 0.5s ease-out both;
         }
         
         .pane-body h3:first-child {
@@ -1034,6 +1282,7 @@
             line-height: 1.7;
             margin-bottom: 1.25rem;
             text-shadow: 0 2px 3px rgba(0, 0, 0, 0.9);
+            animation: panePEntrance 0.5s ease-out both;
         }
         
         .pane-body ul {
@@ -1050,6 +1299,7 @@
             line-height: 1.6;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+            animation: paneLiEntrance 0.5s ease-out both;
         }
         
         .pane-body li::before {
@@ -1058,12 +1308,12 @@
             position: absolute;
             left: 0;
             font-size: 1.2rem;
-            animation: bulletPulse 2s infinite;
+            animation: bulletPulse 3s infinite;
         }
         
         @keyframes bulletPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: translateX(0); }
+            50% { opacity: 0.5; transform: translateX(3px); }
         }
         
         .event-details-grid {
@@ -1081,10 +1331,11 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
+            animation: detailBoxEntrance 0.5s ease-out both;
         }
         
         .detail-box:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
         
@@ -1104,7 +1355,153 @@
             margin-bottom: 0;
         }
         
-        /* Participation Info */
+        /* === SPOT REGISTRATION NOTIFICATION - ENHANCED === */
+        .spot-registration {
+            background: linear-gradient(135deg, rgba(255, 64, 129, 0.15), rgba(255, 64, 129, 0.05));
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid rgba(255, 64, 129, 0.3);
+            box-shadow: 
+                0 10px 30px rgba(255, 64, 129, 0.2),
+                0 0 20px rgba(255, 64, 129, 0.1),
+                inset 0 0 10px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            animation: spotlightPulse 4s infinite alternate, spotEntrance 0.8s ease-out both;
+        }
+        
+        @keyframes spotEntrance {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes spotlightPulse {
+            0% { 
+                box-shadow: 
+                    0 10px 30px rgba(255, 64, 129, 0.2),
+                    0 0 20px rgba(255, 64, 129, 0.1),
+                    inset 0 0 10px rgba(255, 255, 255, 0.05);
+            }
+            100% { 
+                box-shadow: 
+                    0 20px 50px rgba(255, 64, 129, 0.3),
+                    0 0 40px rgba(255, 64, 129, 0.25),
+                    inset 0 0 25px rgba(255, 255, 255, 0.08);
+            }
+        }
+        
+        .spot-registration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent,
+                var(--neon-pink),
+                var(--highlight),
+                var(--neon-pink),
+                transparent);
+            animation: gradientFlow 4s infinite linear;
+        }
+        
+        .spot-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .spot-icon {
+            color: var(--neon-pink);
+            background: rgba(255, 64, 129, 0.15);
+            width: clamp(3.5rem, 7vw, 5rem);
+            height: clamp(3.5rem, 7vw, 5rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 64, 129, 0.4);
+            box-shadow: 0 0 25px rgba(255, 64, 129, 0.3);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            animation: spotIconFloat 3s infinite ease-in-out;
+            flex-shrink: 0;
+        }
+        
+        @keyframes spotIconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .spot-title {
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            text-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
+            line-height: 1.3;
+        }
+        
+        .spot-title span {
+            color: var(--neon-pink);
+            background: linear-gradient(135deg, #ff4081, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            animation: spotTitleGlow 3s infinite alternate;
+        }
+        
+        @keyframes spotTitleGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 64, 129, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 64, 129, 0.8); }
+        }
+        
+        .spot-content {
+            color: #f0f0ff;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .spot-highlight {
+            background: rgba(255, 64, 129, 0.15);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            border-left: 3px solid var(--neon-pink);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: spotHighlightPulse 3s infinite alternate;
+        }
+        
+        @keyframes spotHighlightPulse {
+            0% { background: rgba(255, 64, 129, 0.15); }
+            100% { background: rgba(255, 64, 129, 0.25); }
+        }
+        
+        .spot-highlight i {
+            color: var(--neon-pink);
+            font-size: 1.2rem;
+            animation: spotIconSpin 4s infinite linear;
+        }
+        
+        @keyframes spotIconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .spot-highlight p {
+            color: white;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* Participation Info - ENHANCED */
         .participation-info {
             background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(57, 73, 171, 0.9));
             color: white;
@@ -1118,6 +1515,12 @@
             overflow: hidden;
             border: 2px solid rgba(255, 152, 0, 0.3);
             width: 100%;
+            animation: participationEntrance 0.8s ease-out both;
+        }
+        
+        @keyframes participationEntrance {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         
         .participation-info::before {
@@ -1129,12 +1532,7 @@
             height: 300px;
             background: radial-gradient(circle, rgba(255, 152, 0, 0.2) 0%, transparent 70%);
             border-radius: 50%;
-            animation: rotate 20s infinite linear;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            animation: rotate 25s infinite linear;
         }
         
         .participation-info h3 {
@@ -1160,9 +1558,15 @@
             border: 2px solid rgba(0, 229, 255, 0.3);
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            animation: participationIconFloat 4s infinite ease-in-out;
         }
         
-        /* Coordinator Boxes */
+        @keyframes participationIconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Coordinator Boxes - ENHANCED */
         .coordinators {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -1183,13 +1587,23 @@
             overflow: hidden;
             transition: transform 0.5s ease;
             width: 100%;
+            animation: coordinatorEntrance 0.8s ease-out both;
+        }
+        
+        .coordinator-box:nth-child(1) { animation-delay: 0.1s; }
+        .coordinator-box:nth-child(2) { animation-delay: 0.2s; }
+        
+        @keyframes coordinatorEntrance {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
         }
         
         .coordinator-box:hover {
-            transform: translateY(-15px);
+            transform: translateY(-15px) scale(1.02);
             box-shadow: 
                 0 25px 60px rgba(0, 0, 0, 0.3),
-                0 0 40px rgba(124, 77, 255, 0.2);
+                0 0 40px rgba(124, 77, 255, 0.2),
+                0 0 50px rgba(0, 229, 255, 0.2);
         }
         
         .coordinator-box::before {
@@ -1200,6 +1614,12 @@
             width: 100%;
             height: 5px;
             background: linear-gradient(90deg, var(--highlight3), var(--neon-blue));
+            animation: coordinatorLineFlow 3s infinite linear;
+        }
+        
+        @keyframes coordinatorLineFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
         
         .coordinator-box h3 {
@@ -1226,6 +1646,12 @@
             border: 2px solid rgba(124, 77, 255, 0.3);
             box-shadow: 0 0 20px rgba(124, 77, 255, 0.2);
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            animation: coordinatorIconFloat 4s infinite ease-in-out;
+        }
+        
+        @keyframes coordinatorIconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
         }
         
         .coordinator-box ul {
@@ -1242,12 +1668,29 @@
             color: #c0c0ff;
             font-size: clamp(0.85rem, 2vw, 1rem);
             line-height: 1.4;
+            animation: coordinatorLiEntrance 0.5s ease-out both;
+        }
+        
+        .coordinator-box li:nth-child(1) { animation-delay: 0.1s; }
+        .coordinator-box li:nth-child(2) { animation-delay: 0.2s; }
+        .coordinator-box li:nth-child(3) { animation-delay: 0.3s; }
+        .coordinator-box li:nth-child(4) { animation-delay: 0.4s; }
+        .coordinator-box li:nth-child(5) { animation-delay: 0.5s; }
+        .coordinator-box li:nth-child(6) { animation-delay: 0.6s; }
+        .coordinator-box li:nth-child(7) { animation-delay: 0.7s; }
+        
+        @keyframes coordinatorLiEntrance {
+            0% { transform: translateX(-20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
         }
         
         .coordinator-box li:hover {
-            transform: translateX(0.75rem);
+            transform: translateX(0.75rem) scale(1.02);
             color: white;
             border-bottom-color: rgba(255, 152, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 1rem;
+            border-radius: 0.25rem;
         }
         
         .coordinator-box li::before {
@@ -1256,14 +1699,21 @@
             font-weight: bold;
             font-size: 0.8rem;
             transition: transform 0.3s ease;
+            animation: coordinatorArrowBlink 3s infinite;
+        }
+        
+        @keyframes coordinatorArrowBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
         
         .coordinator-box li:hover::before {
             transform: translateX(0.25rem);
             color: var(--neon-blue);
+            animation: none;
         }
         
-        /* Register Button */
+        /* Register Button - ENHANCED */
         .register-btn {
             display: inline-flex;
             align-items: center;
@@ -1291,6 +1741,17 @@
             text-align: center;
             width: fit-content;
             max-width: 100%;
+            animation: registerBtnEntrance 0.8s ease-out both, registerBtnPulse 3s infinite alternate;
+        }
+        
+        @keyframes registerBtnEntrance {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes registerBtnPulse {
+            0% { box-shadow: 0 15px 40px rgba(255, 87, 34, 0.3), 0 0 30px rgba(255, 152, 0, 0.2); }
+            100% { box-shadow: 0 20px 50px rgba(255, 87, 34, 0.4), 0 0 40px rgba(255, 152, 0, 0.3); }
         }
         
         .register-btn::before {
@@ -1307,18 +1768,51 @@
         }
         
         .register-btn:hover {
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-8px) scale(1.05) rotate(2deg);
             box-shadow: 
                 0 25px 60px rgba(255, 87, 34, 0.4),
-                0 0 50px rgba(255, 152, 0, 0.3);
+                0 0 50px rgba(255, 152, 0, 0.3),
+                0 0 60px rgba(124, 77, 255, 0.2);
             letter-spacing: 1px;
+            animation: none;
         }
         
         .register-btn:hover::before {
             opacity: 1;
         }
         
-        /* Footer */
+        /* NEW: Animated register button effect */
+        .register-btn::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--highlight), 
+                var(--highlight2), 
+                var(--highlight3), 
+                var(--neon-blue), 
+                var(--highlight));
+            background-size: 400% 400%;
+            border-radius: 2.5rem;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: registerBtnBorder 4s infinite linear;
+        }
+        
+        @keyframes registerBtnBorder {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+        
+        .register-btn:hover::after {
+            opacity: 1;
+        }
+        
+        /* Footer - ENHANCED */
         .footer {
             text-align: center;
             padding: clamp(1.5rem, 4vw, 3.125rem);
@@ -1333,8 +1827,15 @@
                 0 20px 50px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
             width: 100%;
+            animation: footerEntrance 0.8s ease-out both;
         }
         
+        @keyframes footerEntrance {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* === ENHANCED SOCIAL MEDIA ICONS === */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -1349,23 +1850,128 @@
             justify-content: center;
             width: clamp(2.5rem, 6vw, 3.75rem);
             height: clamp(2.5rem, 6vw, 3.75rem);
-            background: rgba(0, 229, 255, 0.1);
             border-radius: 50%;
             color: white;
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             transition: all 0.4s ease;
-            border: 1px solid rgba(0, 229, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            animation: socialIconEntrance 0.5s ease-out both, socialIconFloat 4s infinite ease-in-out;
         }
         
-        .social-icons a:hover {
-            background: var(--highlight);
-            transform: translateY(-10px) rotate(15deg);
-            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
-            border-color: rgba(255, 152, 0, 0.5);
+        .social-icons a:nth-child(1) { animation-delay: 0.1s; }
+        .social-icons a:nth-child(2) { animation-delay: 0.2s; }
+        .social-icons a:nth-child(3) { animation-delay: 0.3s; }
+        
+        @keyframes socialIconEntrance {
+            0% { transform: scale(0) rotate(180deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
         }
         
-        /* Scroll to top button */
+        @keyframes socialIconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            background: linear-gradient(135deg, var(--whatsapp), #128C7E) !important;
+            border-color: rgba(37, 211, 102, 0.4) !important;
+            color: white !important;
+            box-shadow: 
+                0 10px 25px rgba(37, 211, 102, 0.3),
+                0 0 20px rgba(37, 211, 102, 0.2) !important;
+        }
+        
+        .whatsapp-icon:hover {
+            background: linear-gradient(135deg, #128C7E, var(--whatsapp)) !important;
+            transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
+            box-shadow: 
+                0 15px 35px rgba(37, 211, 102, 0.4),
+                0 0 30px rgba(37, 211, 102, 0.3),
+                0 0 40px rgba(37, 211, 102, 0.2) !important;
+            border-color: rgba(37, 211, 102, 0.7) !important;
+            animation: whatsappPulse 1.5s infinite alternate !important;
+        }
+        
+        @keyframes whatsappPulse {
+            0% { box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4), 0 0 30px rgba(37, 211, 102, 0.3), 0 0 40px rgba(37, 211, 102, 0.2); }
+            100% { box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.4), 0 0 50px rgba(37, 211, 102, 0.3); }
+        }
+        
+        /* Instagram Icon */
+        .instagram-icon {
+            background: linear-gradient(135deg, var(--instagram), #833AB4, #405DE6) !important;
+            border-color: rgba(228, 64, 95, 0.4) !important;
+            color: white !important;
+            box-shadow: 
+                0 10px 25px rgba(228, 64, 95, 0.3),
+                0 0 20px rgba(131, 58, 180, 0.2) !important;
+        }
+        
+        .instagram-icon:hover {
+            background: linear-gradient(135deg, #405DE6, #833AB4, var(--instagram)) !important;
+            transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
+            box-shadow: 
+                0 15px 35px rgba(228, 64, 95, 0.4),
+                0 0 30px rgba(131, 58, 180, 0.3),
+                0 0 40px rgba(64, 93, 230, 0.2) !important;
+            border-color: rgba(228, 64, 95, 0.7) !important;
+            animation: instagramPulse 1.5s infinite alternate !important;
+        }
+        
+        @keyframes instagramPulse {
+            0% { box-shadow: 0 15px 35px rgba(228, 64, 95, 0.4), 0 0 30px rgba(131, 58, 180, 0.3), 0 0 40px rgba(64, 93, 230, 0.2); }
+            100% { box-shadow: 0 20px 45px rgba(228, 64, 95, 0.5), 0 0 40px rgba(131, 58, 180, 0.4), 0 0 50px rgba(64, 93, 230, 0.3); }
+        }
+        
+        /* YouTube Icon */
+        .youtube-icon {
+            background: linear-gradient(135deg, var(--youtube), #C4302B) !important;
+            border-color: rgba(255, 0, 0, 0.4) !important;
+            color: white !important;
+            box-shadow: 
+                0 10px 25px rgba(255, 0, 0, 0.3),
+                0 0 20px rgba(196, 48, 43, 0.2) !important;
+        }
+        
+        .youtube-icon:hover {
+            background: linear-gradient(135deg, #C4302B, var(--youtube)) !important;
+            transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
+            box-shadow: 
+                0 15px 35px rgba(255, 0, 0, 0.4),
+                0 0 30px rgba(196, 48, 43, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2) !important;
+            border-color: rgba(255, 0, 0, 0.7) !important;
+            animation: youtubePulse 1.5s infinite alternate !important;
+        }
+        
+        @keyframes youtubePulse {
+            0% { box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4), 0 0 30px rgba(196, 48, 43, 0.3), 0 0 40px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 20px 45px rgba(255, 0, 0, 0.5), 0 0 40px rgba(196, 48, 43, 0.4), 0 0 50px rgba(255, 0, 0, 0.3); }
+        }
+        
+        /* Add platform logo animation to all social icons */
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .social-icons a:hover::before {
+            opacity: 1;
+        }
+        
+        /* Scroll to top button - ENHANCED */
         .scroll-top {
             position: fixed;
             bottom: 1.5rem;
@@ -1384,23 +1990,33 @@
                 0 0 20px rgba(255, 152, 0, 0.2);
             cursor: pointer;
             opacity: 0;
-            transform: translateY(20px) scale(0.8);
+            transform: translateY(20px) scale(0.8) rotate(180deg);
             transition: all 0.4s ease;
             z-index: 1000;
             border: none;
+            animation: scrollTopPulse 3s infinite alternate;
+        }
+        
+        @keyframes scrollTopPulse {
+            0% { box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3), 0 0 20px rgba(255, 152, 0, 0.2); }
+            100% { box-shadow: 0 15px 40px rgba(255, 87, 34, 0.4), 0 0 30px rgba(255, 152, 0, 0.3); }
         }
         
         .scroll-top.active {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1) rotate(0deg);
         }
         
         .scroll-top:hover {
-            transform: translateY(-10px) scale(1.1);
+            transform: translateY(-10px) scale(1.1) rotate(360deg);
             box-shadow: 
                 0 15px 40px rgba(255, 87, 34, 0.4),
-                0 0 30px rgba(255, 152, 0, 0.3);
+                0 0 30px rgba(255, 152, 0, 0.3),
+                0 0 40px rgba(124, 77, 255, 0.2);
+            animation: none;
         }
+        
+        /* Mouse follower effect REMOVED */
         
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
@@ -1453,7 +2069,7 @@
             }
             
             .event-title {
-                animation: titleGlow 2s infinite alternate;
+                animation: titleGlow 4s infinite alternate;
             }
             
             .event-card:hover {
@@ -1461,7 +2077,7 @@
             }
             
             .coordinator-box li:hover {
-                transform: translateX(0.5rem);
+                transform: translateX(0.5rem) scale(1.01);
             }
             
             .register-btn:hover {
@@ -1479,8 +2095,21 @@
             
             /* Adjust logo for mobile */
             .pane-logo-bg {
-                opacity: 0.5; /* Slightly lower opacity for mobile */
-                background-size: 80% auto; /* Larger on mobile */
+                opacity: 0.5;
+                background-size: 80% auto;
+            }
+            
+            /* Spot registration mobile adjustments */
+            .spot-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+            
+            .spot-icon {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.5rem;
             }
             
             /* Stack elements vertically on very small screens */
@@ -1567,6 +2196,10 @@
                 .pane-logo-bg {
                     opacity: 0.45;
                     background-size: 85% auto;
+                }
+                
+                .spot-title {
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -1664,6 +2297,10 @@
                 transform: none;
             }
             
+            .social-icons a:hover {
+                transform: none !important;
+            }
+            
             /* Increase tap targets for mobile */
             .event-card,
             .register-btn,
@@ -1677,13 +2314,24 @@
                 min-height: 44px;
                 min-width: 44px;
             }
+            
+            /* Disable hover animations */
+            .event-card::before,
+            .register-btn::before,
+            .register-btn::after,
+            .social-icons a::before {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Background Elements -->
+    <div class="stars" id="stars"></div>
     <div class="circuit-lines"></div>
     <div class="tech-elements" id="techElements"></div>
     <div class="particles-container" id="particlesContainer"></div>
+    <div class="floating-text-container" id="floatingText"></div>
     
     <!-- Event Detail Pane -->
     <div class="event-detail-pane" id="eventDetailPane">
@@ -1741,11 +2389,12 @@
                 <i class="fas fa-clock"></i>
             </div>
             
-            <button class="register-btn" id="mainRegisterBtn">
+            <!-- UPDATED GOOGLE FORM LINK -->
+            <a href="https://forms.gle/Cue4uKUAfutYsEMc6" target="_blank" class="register-btn" id="mainRegisterBtn">
                 <i class="fas fa-user-plus"></i>
                 <span>REGISTER NOW</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
         
         <!-- Main Content -->
@@ -1764,13 +2413,13 @@
             <div class="event-highlights">
                 <!-- Event Cards with data-event attributes -->
                 <div class="event-card" data-event="knowledge-knockout">
-                    <h3><i class="fas fa-brain"></i> Knowledge Knockout</h3>
+                    <h3><i class="fas fa-brain"></i> E-Nijia's </h3>
                     <p>Technical quiz competition to test your electronics and communication knowledge. Teams of 2-3 members compete in multiple rounds with increasing difficulty.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
                 
                 <div class="event-card" data-event="spintron">
-                    <h3><i class="fas fa-atom"></i> Spintron</h3>
+                    <h3><i class="fas fa-atom"></i> Project Expo </h3>
                     <p>Concept-based ECE event focusing on core electronics principles and applications. Solve real-world engineering problems with innovative solutions.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
@@ -1782,13 +2431,13 @@
                 </div>
                 
                 <div class="event-card" data-event="electrotalk">
-                    <h3><i class="fas fa-paint-brush"></i> Electro Talk</h3>
+                    <h3><i class="fas fa-paint-brush"></i> Paper Presentation </h3>
                     <p>Display your research and innovative ideas through creative posters. Evaluation based on content quality, design aesthetics, and presentation skills.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
                 
                 <div class="event-card" data-event="circuit-safari">
-                    <h3><i class="fas fa-bolt"></i> Circuit Safari</h3>
+                    <h3><i class="fas fa-bolt"></i> Circuit Hunt </h3>
                     <p>Circuit design and debugging challenge for aspiring electronics engineers. Individual and team categories with hardware components provided.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
@@ -1796,12 +2445,6 @@
                 <div class="event-card" data-event="treasure-hunt">
                     <h3><i class="fas fa-search"></i> Technical Treasure Hunt</h3>
                     <p>Solve technical puzzles to find hidden treasures across the campus. Combines technical knowledge with teamwork and problem-solving skills.</p>
-                    <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
-                </div>
-                
-                <div class="event-card" data-event="riddles-crypt">
-                    <h3><i class="fas fa-puzzle-piece"></i> Riddles Crypt</h3>
-                    <p>Logical reasoning and technical problem-solving competition. Test your analytical, critical thinking, and coding skills in this challenging event.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
@@ -1823,6 +2466,36 @@
                 will also be conducted throughout the day.
             </p>
             
+            <!-- === UPDATED SPOT REGISTRATION NOTIFICATION === -->
+            <div class="spot-registration">
+                <div class="spot-header">
+                    <div class="spot-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="spot-title">
+                        <span>SPOT REGISTRATION</span> AVAILABLE!
+                    </div>
+                </div>
+                
+                <div class="spot-content">
+                    <p>Missed the online registration? No worries! We offer <strong>spot registration</strong> at the venue on event day.</p>
+                    
+                    <div class="spot-highlight">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Date:</strong> 10th February 2026</p>
+                    </div>
+                    
+                    <div class="spot-highlight">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Venue:</strong> A-Block Reception Hall, ALITS Campus</p>
+                    </div>
+                    
+                    <p><strong>Spot Registration Fee:</strong> ₹200 per event (includes all benefits of pre-registration)</p>
+                    <p><strong>Timings:</strong> 9:00 AM - 11:00 AM<br>
+                    <strong>Requirements:</strong> College ID Card & Registration Fee</p>
+                </div>
+            </div>
+            
             <div class="participation-info" id="register">
                 <h3><i class="fas fa-user-friends"></i> PARTICIPATION DETAILS</h3>
                 <p>
@@ -1834,7 +2507,7 @@
                 <div class="event-details-grid">
                     <div class="detail-box">
                         <h4><i class="fas fa-money-bill-wave"></i> Registration Fee</h4>
-                        <p>₹100 per participant (includes event kit and certificate)</p>
+                        <p>₹200 Depending On Event (includes event kit and certificate)</p>
                     </div>
                     
                     <div class="detail-box">
@@ -1848,14 +2521,15 @@
                     </div>
                 </div>
                 
-                <button class="register-btn w-100 justify-content-center">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>REGISTER ONLINE</span>
+                <!-- UPDATED GOOGLE FORM LINK -->
+                <a href="https://forms.gle/Cue4uKUAfutYsEMc6" target="_blank" class="register-btn">
+                    <i class="fab fa-google"></i>
+                    <span>REGISTER VIA GOOGLE FORM</span>
                     <i class="fas fa-external-link-alt"></i>
-                </button>
+                </a>
             </div>
             
-            <h2 class="section-title"><i class="fas fa-handshake"></i> COORDINATORS</h2>
+            <h2 class="section-title"><i class="fas fa-handshake"></i> CO-ORDINATORS</h2>
             
             <div class="coordinators">
                 <div class="coordinator-box">
@@ -1874,13 +2548,13 @@
                 <div class="coordinator-box">
                     <h3><i class="fas fa-users"></i> STUDENT CO-ORDINATORS</h3>
                     <ul>
-                        <li>M. Chennakeshavulu - President, Knowledge Knockout</li>
+                        <li>M. Chennakeshavulu - President</li>
                         <li>T. Chandu - Tech Treasure Hunt</li>
-                        <li>P. Bharath Kumar - Electro-Talk</li>
-                        <li>L. Phaneendra - Circuit Safari</li>
+                        <li>V.Manoj Kumar - Poster Presentation</li>
+                        <li>L. Phaneendra - Circuit Hunt</li>
                         <li>K. Venkatesh - Power Point Presentation</li>
-                        <li>T. Zakiya Khanam - Spintron</li>
-                        <li>Y. Likitha - Riddles Crypt</li>
+                        <li>K.Rishikesh Achari - E-Nijia's</li>
+                        <li>Y. Likitha - Project Expo </li>
                     </ul>
                 </div>
             </div>
@@ -1899,7 +2573,7 @@
                 <i class="fas fa-graduation-cap"></i> Department of Electronics and Communication Engineering
             </p>
             <p class="text-center">
-                <i class="fas fa-envelope"></i> eudbhav.alits@example.edu 
+                <i class="fas fa-envelope"></i> chennakeshavamandla4@gmail.com 
                 <span class="d-inline-block mx-2">|</span>
                 <i class="fas fa-phone"></i> +91-9392519212
             </p>
@@ -1907,14 +2581,24 @@
                 <i class="fas fa-map-marker-alt"></i> ECE Block, ALITS Campus, Anantapur, Andhra Pradesh - 515721
             </p>
             
+            <!-- Enhanced Social Media Icons -->
             <div class="social-icons">
-                <a href="https://wa.me/919392519212?text=Hello%20I%20would%20like%20to%20contact%20you" target="_blank" aria-label="WhatsApp">
+                <a href="https://wa.me/919392519212?text=Hello%20I%20would%20like%20to%20contact%20you" 
+                   target="_blank" 
+                   aria-label="WhatsApp"
+                   class="whatsapp-icon">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/e_udbhav_2k26?igsh=NmkzeDA2eWc0d3Y3" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/e_udbhav_2k26?igsh=NmkzeDA2eWc0d3Y3" 
+                   target="_blank" 
+                   aria-label="Instagram"
+                   class="instagram-icon">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://youtube.com/@shabb490?si=9hkvhrCeYkDHneUz" target="_blank" aria-label="YouTube">
+                <a href="https://youtube.com/@shabb490?si=9hkvhrCeYkDHneUz" 
+                   target="_blank" 
+                   aria-label="YouTube"
+                   class="youtube-icon">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
@@ -1934,16 +2618,12 @@
     </button>
     
     <script>
-        // Event data for each event - UPDATED WITH JPEG LOGOS
+        // Event data for each event
         const eventDetails = {
             'knowledge-knockout': {
                 title: 'Knowledge Knockout',
                 icon: 'fa-brain',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                    Examples: 'knowledge-knockout.jpg', 'quiz-event.jpg', etc.
-                */
-                logo: 'KK.JPEG', // Change this to your actual JPEG filename
+                logo: 'KK.JPEG',
                 description: 'A high-intensity technical quiz competition designed to test participants\' in-depth knowledge of electronics and communication engineering concepts.',
                 details: [
                     {
@@ -1952,7 +2632,7 @@
                     },
                     {
                         title: 'Team Requirements',
-                        content: 'Teams of 2-3 members from any engineering discipline. Cross-disciplinary teams are encouraged to participate.'
+                        content: 'Single participant from any engineering discipline. Participants from all branches are encouraged to participate.'
                     },
                     {
                         title: 'Topics Covered',
@@ -1964,23 +2644,19 @@
                     }
                 ],
                 rules: [
-                    'Each team must register with unique team name',
                     'No electronic devices allowed during the competition',
-                    'Teams must adhere to time limits for each round',
+                    'Partcipant must adhere to time limits for each round',
                     'Decision of the judges will be final and binding',
                     'Any form of malpractice will lead to immediate disqualification'
                 ],
-                prizes: 'First Prize: ₹5000 + Trophy, Second Prize: ₹3000 + Trophy, Third Prize: ₹2000 + Trophy, All participants receive participation certificates.',
-                timing: '10th Feb: 10:00 AM - 1:00 PM (Prelims), 2:30 PM - 4:30 PM (Finals)'
+                prizes: 'Winners for Merit Certificates and All participants receive Participation certificates.',
+                timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
             
             'spintron': {
-                title: 'Spintron',
+                title: 'Project Expo (Spintron)',
                 icon: 'fa-atom',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'spintron.JPEG', // Change this to your actual JPEG filename
+                logo: 'spintron.JPEG',
                 description: 'A concept-based event focusing on the application of core electronics principles to solve real-world engineering problems.',
                 details: [
                     {
@@ -2003,22 +2679,19 @@
                     'Solutions must be presented within stipulated time',
                     'Plagiarism will result in disqualification'
                 ],
-                prizes: 'Winner: ₹4000 + Trophy, Runner-up: ₹2500 + Trophy, Best Innovation Award: ₹2000',
-                timing: '10th Feb: 9:30 AM - 12:30 PM (Problem Solving), 2:00 PM - 4:00 PM (Presentation)'
+                prizes: 'Winners for Merit Certificates and All participants receive Participation certificates ',
+                timing: '10th Feb: 2:30 PM - 4:00 PM '
             },
             
             'powerpoint': {
                 title: 'Power Point Presentation',
                 icon: 'fa-desktop',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'PPTlogo.JPEG', // Change this to your actual JPEG filename
+                logo: 'PPTlogo.JPEG',
                 description: 'An opportunity to showcase technical ideas, research findings, and innovative projects through compelling presentations.',
                 details: [
                     {
                         title: 'Presentation Topics',
-                        content: 'Emerging Technologies in ECE, Innovative Project Ideas, Research Findings, Case Studies, Technology Implementation Strategies'
+                        content: 'Quantum Technology, Emerging Technologies in ECE, Innovative Project Ideas, Research Findings, Case Studies, Technology Implementation Strategies'
                     },
                     {
                         title: 'Time Allocation',
@@ -2026,7 +2699,7 @@
                     },
                     {
                         title: 'Presentation Requirements',
-                        content: 'Maximum 15 slides, Must include technical details, implementation strategy, and future scope. Presentations should be in PDF or PPTX format.'
+                        content: 'Maximum 6-7 slides, Must include technical details, implementation strategy, and future scope. Presentations should be in PDF or PPTX format.'
                     }
                 ],
                 rules: [
@@ -2036,18 +2709,15 @@
                     'All slides must be submitted 30 minutes before the event',
                     'Use of animations and multimedia is encouraged'
                 ],
-                prizes: 'Best Presentation: ₹3000 + Trophy, Second Best: ₹2000 + Trophy, Third Best: ₹1000 + Trophy',
-                timing: '10th Feb: 10:00 AM - 1:00 PM (Session 1), 2:30 PM - 5:00 PM (Session 2)'
+                prizes: 'Winners for Merit Certificates and All participants receive Participation certificates',
+                timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
             
             'electrotalk': {
-                title: 'Electro Talk',
+                title: 'Poster presnetation (Electro Talk)',
                 icon: 'fa-paint-brush',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'electrotalk.JPEG', // Change this to your actual JPEG filename
-                description: 'A poster presentation competition where participants display their research and innovative ideas through creative and informative posters.',
+                logo: 'electrotalk.JPEG',
+                description: 'A poster presentation competition where participants display their research and innovative ideas through creative and informative posters more invitely Edge and Smart technologies or other topics.',
                 details: [
                     {
                         title: 'Poster Specifications',
@@ -2069,22 +2739,19 @@
                     'Participants must stand by their posters during judging',
                     'All materials used in poster must be properly cited'
                 ],
-                prizes: 'Best Poster: ₹3500 + Trophy, Most Creative Design: ₹2000 + Trophy, Technical Excellence: ₹2000 + Trophy',
-                timing: '10th Feb: 9:00 AM - 12:00 PM (Setup & Judging), 2:00 PM - 4:00 PM (Public Viewing)'
+                prizes: 'Winners for Merit Certificates and All participants receive Participation certificates',
+                timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
             
             'circuit-safari': {
-                title: 'Circuit Safari',
+                title: 'Circuit Hunt (Circuit Safari)',
                 icon: 'fa-bolt',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'circuitsafari.JPEG', // Change this to your actual JPEG filename
+                logo: 'circuitsafari.JPEG',
                 description: 'A hands-on circuit design and debugging challenge that tests practical electronics skills under time constraints.',
                 details: [
                     {
                         title: 'Competition Structure',
-                        content: 'Round 1: Circuit Design Challenge, Round 2: Circuit Debugging, Round 3: Component Identification & Application'
+                        content: 'Round 1: Basic Circuits & Components (MCQs),Round 2: Circuit Problems & Applications (MCQs)'
                     },
                     {
                         title: 'Provided Components',
@@ -2099,20 +2766,16 @@
                     'Individual participation only',
                     'All components will be provided by organizers',
                     'No external components allowed',
-                    'Multimeters and oscilloscopes will be available',
                     'Safety precautions must be followed at all times'
                 ],
-                prizes: 'Circuit Wizard: ₹4500 + Trophy, Debugging Master: ₹3000 + Trophy, Fastest Completion: ₹2000 + Trophy',
-                timing: '10th Feb: 10:30 AM - 1:00 PM (Design), 2:30 PM - 4:30 PM (Debugging)'
+                prizes: 'Merit Cerrtificate and Participation Certificate',
+                timing: '10th Feb: 2:30 PM - 4:00 PM '
             },
             
             'treasure-hunt': {
                 title: 'Technical Treasure Hunt',
                 icon: 'fa-search',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'TTH.JPEG', // Change this to your actual JPEG filename
+                logo: 'TTH.JPEG',
                 description: 'An exciting technical puzzle-solving adventure across the campus that combines technical knowledge with teamwork.',
                 details: [
                     {
@@ -2135,50 +2798,215 @@
                     'All team members must stay together',
                     'Clues must be solved in sequence'
                 ],
-                prizes: 'First to Find Treasure: ₹5000 + Trophy, Second Team: ₹3000 + Trophy, Most Creative Solution: ₹2000',
-                timing: '10th Feb: 10:00 AM - 1:00 PM (Across Campus)'
+                prizes: 'Cash Prize and Participation Certificate',
+                timing: '10th Feb: 02:00 AM - 4:00 PM (Across Campus)'
             },
-            
-            'riddles-crypt': {
-                title: 'Riddles Crypt',
-                icon: 'fa-puzzle-piece',
-                /* 
-                    REPLACE WITH YOUR ACTUAL JPEG FILENAME
-                */
-                logo: 'riddlescrypt.JPEG', // Change this to your actual JPEG filename
-                description: 'A logical reasoning and technical problem-solving competition that challenges analytical and critical thinking skills.',
-                details: [
-                    {
-                        title: 'Competition Format',
-                        content: 'Individual written test followed by team-based puzzle solving sessions. Includes pattern recognition, sequence solving, and logical deduction problems.'
-                    },
-                    {
-                        title: 'Problem Categories',
-                        content: 'Logical Puzzles, Pattern Recognition, Algorithmic Thinking, Cryptography Basics, Technical Aptitude Questions'
-                    },
-                    {
-                        title: 'Scoring',
-                        content: 'Written Test: 50 marks, Puzzle Solving: 30 marks, Team Challenge: 20 marks'
-                    }
-                ],
-                rules: [
-                    'Individual or teams of 2',
-                    'No electronic calculators allowed',
-                    'All work must be shown for partial credit',
-                    'Time limits strictly enforced',
-                    'Collaboration only allowed in team rounds'
-                ],
-                prizes: 'Puzzle Master: ₹4000 + Trophy, Logic Expert: ₹2500 + Trophy, Best Team: ₹3000 + Trophy',
-                timing: '10th Feb: 11:00 AM - 1:00 PM (Individual), 2:30 PM - 4:00 PM (Team)'
-            }
         };
 
-        // Responsive adjustments based on screen size
+        // UPDATED Google Form Link
+        const GOOGLE_FORM_LINK = "https://forms.gle/Cue4uKUAfutYsEMc6";
+
+        // NEW: Create stars background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                const duration = Math.random() * 5 + 3;
+                star.style.setProperty('--duration', `${duration}s`);
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // NEW: Create floating text elements
+        function createFloatingText() {
+            const container = document.getElementById('floatingText');
+            const texts = ['E-UDBHAV', '2K26', 'TECH FEST', 'INNOVATION', 'ELECTRONICS', 'COMMUNICATION', 'ALITS', 'ECE'];
+            const count = 15;
+            
+            for (let i = 0; i < count; i++) {
+                const text = document.createElement('div');
+                text.classList.add('floating-text');
+                text.textContent = texts[Math.floor(Math.random() * texts.length)];
+                
+                text.style.left = `${Math.random() * 100}%`;
+                text.style.fontSize = `${Math.random() * 1 + 0.8}rem`;
+                
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 20 + 20;
+                text.style.animationDelay = `${delay}s`;
+                text.style.animationDuration = `${duration}s`;
+                
+                const opacity = Math.random() * 0.1 + 0.05;
+                text.style.opacity = opacity;
+                
+                const colors = ['var(--neon-blue)', 'var(--highlight)', 'var(--neon-pink)'];
+                text.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                container.appendChild(text);
+            }
+        }
+
+        // Enhanced: Create tech elements with random animations
+        function createTechElements() {
+            const container = document.getElementById('techElements');
+            const icons = ['fa-microchip', 'fa-bolt', 'fa-satellite', 'fa-wifi', 'fa-robot', 'fa-code', 'fa-calculator', 'fa-memory', 'fa-server', 'fa-network-wired'];
+            const count = 30;
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.classList.add('tech-element');
+                element.innerHTML = `<i class="fas ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
+                
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.fontSize = `${(Math.random() * 2 + 0.8)}rem`;
+                
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 20 + 20;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                
+                const colors = ['var(--neon-blue)', 'var(--highlight)', 'var(--neon-pink)', 'var(--highlight3)'];
+                element.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                container.appendChild(element);
+            }
+        }
+        
+        // Enhanced: Create glowing particles
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = 40;
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const maxSize = window.innerWidth < 768 ? 10 : 20;
+                const size = Math.random() * maxSize + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 15 + 10;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                const colors = ['#00e5ff', '#ff4081', '#7c4dff', '#ff9800', '#ff5722'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
+                particle.style.boxShadow = `0 0 20px ${color}, 0 0 40px ${color}`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // NEW: Animate subtitle parts sequentially
+        function animateSubtitleParts() {
+            const parts = document.querySelectorAll('.subtitle-part');
+            parts.forEach((part, index) => {
+                part.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // NEW: Typewriter effect for event title
+        function initTypewriterEffect() {
+            const eventTitle = document.querySelector('.event-title');
+            if (!eventTitle) return;
+            
+            const originalText = eventTitle.textContent;
+            eventTitle.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    eventTitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 200);
+                } else {
+                    if (window.innerWidth > 768) {
+                        const cursor = document.createElement('span');
+                        cursor.textContent = '|';
+                        cursor.style.animation = 'blink 1.5s infinite';
+                        eventTitle.appendChild(cursor);
+                    }
+                }
+            }
+            
+            // Start immediately - removed loading delay
+            setTimeout(typeWriter, 1500);
+        }
+        
+        // NEW: Add ripple effect CSS
+        function addRippleStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .ripple {
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple-animation 0.8s linear;
+                    pointer-events: none;
+                }
+                
+                @keyframes ripple-animation {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+                
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+                
+                @keyframes blink {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0; }
+                }
+                
+                /* Smooth transitions */
+                .pane-logo-bg {
+                    transition: background-image 0.8s ease, opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Enhanced: Update Google Form links
+        function updateGoogleFormLinks() {
+            const registrationButtons = document.querySelectorAll('.register-btn');
+            registrationButtons.forEach(button => {
+                button.href = GOOGLE_FORM_LINK;
+            });
+        }
+
+        // Enhanced: Responsive adjustments
         function adjustForScreenSize() {
             const screenWidth = window.innerWidth;
             const html = document.documentElement;
             
-            // Adjust font scale based on screen width
             if (screenWidth < 480) {
                 html.style.setProperty('--font-scale', '0.85');
             } else if (screenWidth < 768) {
@@ -2192,64 +3020,7 @@
             }
         }
 
-        // Create tech elements (icons)
-        function createTechElements() {
-            const container = document.getElementById('techElements');
-            const icons = ['fa-microchip', 'fa-bolt', 'fa-satellite', 'fa-wifi', 'fa-robot', 'fa-code', 'fa-calculator', 'fa-memory', 'fa-server', 'fa-network-wired'];
-            const count = window.innerWidth < 768 ? 10 : 20;
-            
-            container.innerHTML = '';
-            
-            for (let i = 0; i < count; i++) {
-                const element = document.createElement('div');
-                element.classList.add('tech-element');
-                element.innerHTML = `<i class="fas ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
-                
-                element.style.left = `${Math.random() * 100}%`;
-                element.style.fontSize = `${(Math.random() * 1.5 + 0.8)}rem`;
-                
-                const delay = Math.random() * 20;
-                const duration = Math.random() * 20 + 20;
-                element.style.animationDelay = `${delay}s`;
-                element.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(element);
-            }
-        }
-        
-        // Create glowing particles
-        function createParticles() {
-            const container = document.getElementById('particlesContainer');
-            const particleCount = window.innerWidth < 768 ? 15 : 30;
-            
-            container.innerHTML = '';
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const maxSize = window.innerWidth < 768 ? 8 : 15;
-                const size = Math.random() * maxSize + 3;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                particle.style.left = `${Math.random() * 100}%`;
-                
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 15 + 10;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
-                
-                const colors = ['#00e5ff', '#ff4081', '#7c4dff', '#ff9800'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
-                particle.style.boxShadow = `0 0 15px ${color}, 0 0 25px ${color}`;
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        // Handle logo loading with fallback
+        // Enhanced: Handle logo loading
         function setupLogo() {
             const logoImg = document.getElementById('collegeLogo');
             
@@ -2257,12 +3028,9 @@
             
             logoImg.onload = function() {
                 this.style.opacity = '1';
-                console.log('Logo loaded successfully');
             };
             
             logoImg.onerror = function() {
-                console.error('Logo image not found. Using fallback icon.');
-                
                 const fallbackHTML = `
                     <div style="width: clamp(80px, 12vw, 120px); height: clamp(80px, 12vw, 120px); display: flex; align-items: center; justify-content: center; 
                          background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)); border-radius: 25%; border: 3px solid rgba(0, 229, 255, 0.4);
@@ -2312,7 +3080,7 @@
             }
         }
         
-        // Event pane functionality - HIGH CLARITY LOGOS
+        // Enhanced: Event pane functionality
         function setupEventPanes() {
             const eventCards = document.querySelectorAll('.event-card');
             const pane = document.getElementById('eventDetailPane');
@@ -2321,7 +3089,7 @@
             const paneBody = document.getElementById('paneBody');
             const paneLogoBg = document.getElementById('paneLogoBg');
             
-            // Preload all logo images for better performance
+            // Preload all logo images
             const preloadedLogos = {};
             Object.keys(eventDetails).forEach(eventId => {
                 const logoUrl = eventDetails[eventId].logo;
@@ -2343,52 +3111,31 @@
                     if (eventData) {
                         paneTitle.innerHTML = `<i class="fas ${eventData.icon}"></i> ${eventData.title}`;
                         
-                        // Set the background logo for the pane
+                        // Set the background logo
                         const logoUrl = eventData.logo;
-                        console.log(`Setting background for ${eventData.title}: ${logoUrl}`);
                         
-                        // Apply the background image with optimized settings for maximum clarity
                         paneLogoBg.style.backgroundImage = `url('${logoUrl}')`;
                         paneLogoBg.style.backgroundSize = 'contain';
                         paneLogoBg.style.backgroundPosition = 'center';
                         paneLogoBg.style.backgroundRepeat = 'no-repeat';
                         
-                        // Set high opacity for maximum visibility
-                        let logoOpacity = 0.6; // High opacity for desktop
+                        let logoOpacity = 0.6;
                         
-                        // Adjust for different screen sizes
-                        if (window.innerWidth < 1024) {
-                            logoOpacity = 0.55;
-                        }
-                        if (window.innerWidth < 768) {
-                            logoOpacity = 0.5;
-                        }
-                        if (window.innerWidth < 480) {
-                            logoOpacity = 0.45;
-                        }
+                        if (window.innerWidth < 1024) logoOpacity = 0.55;
+                        if (window.innerWidth < 768) logoOpacity = 0.5;
+                        if (window.innerWidth < 480) logoOpacity = 0.45;
                         
-                        // Check if we have a preloaded image
                         if (preloadedLogos[eventId]) {
                             const img = preloadedLogos[eventId];
                             if (img.complete && img.naturalWidth !== 0) {
-                                // Image is loaded
-                                console.log(`Logo loaded: ${img.naturalWidth}x${img.naturalHeight}`);
-                                
-                                // For very small logos, increase opacity even more
                                 if (img.naturalWidth < 300 || img.naturalHeight < 300) {
                                     logoOpacity = Math.min(logoOpacity * 1.3, 0.7);
                                 }
-                                
-                                // For dark logos, increase brightness
-                                if (img.naturalWidth > 0 && img.naturalHeight > 0) {
-                                    paneLogoBg.style.filter = 'brightness(1.2) contrast(1.3) saturate(1.1)';
-                                }
+                                paneLogoBg.style.filter = 'brightness(1.2) contrast(1.3) saturate(1.1)';
                             }
                         }
                         
                         paneLogoBg.style.opacity = logoOpacity;
-                        
-                        // Add a subtle animation to the logo
                         paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1.05)';
                         setTimeout(() => {
                             paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -2407,6 +3154,10 @@
                                 <div class="detail-box">
                                     <h4><i class="fas fa-clock"></i> Timing</h4>
                                     <p>${eventData.timing}</p>
+                                </div>
+                                <div class="detail-box">
+                                    <h4><i class="fas fa-link"></i> Registration</h4>
+                                    <p><a href="${GOOGLE_FORM_LINK}" target="_blank" style="color: var(--highlight); text-decoration: underline;">Click here to register</a></p>
                                 </div>
                             </div>
                         `;
@@ -2430,7 +3181,10 @@
                                 <h4 style="color: var(--highlight); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
                                     <i class="fas fa-info-circle"></i> Registration Note
                                 </h4>
-                                <p style="color: #f0f0ff; margin-bottom: 0; font-weight: 500;">Register for this event through the main registration portal. Last date for registration: 7th February 2026.</p>
+                                <p style="color: #f0f0ff; margin-bottom: 0; font-weight: 500;">
+                                    Register via our Google Form or spot registration at venue. 
+                                    <a href="${GOOGLE_FORM_LINK}" target="_blank" style="color: var(--neon-blue); text-decoration: underline; font-weight: bold;">Click to register online</a>.
+                                </p>
                             </div>
                         `;
                         
@@ -2440,7 +3194,6 @@
                         document.body.style.overflow = 'hidden';
                         document.documentElement.style.overflow = 'hidden';
                         
-                        // Scroll to top of pane body
                         paneBody.scrollTop = 0;
                     }
                 });
@@ -2460,7 +3213,6 @@
                 pane.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 document.documentElement.style.overflow = 'auto';
-                // Reset background when closing
                 paneLogoBg.style.backgroundImage = 'none';
                 paneLogoBg.style.opacity = '0';
                 paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -2472,7 +3224,6 @@
                     pane.classList.remove('active');
                     document.body.style.overflow = 'auto';
                     document.documentElement.style.overflow = 'auto';
-                    // Reset background when closing
                     paneLogoBg.style.backgroundImage = 'none';
                     paneLogoBg.style.opacity = '0';
                     paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -2485,7 +3236,6 @@
                     pane.classList.remove('active');
                     document.body.style.overflow = 'auto';
                     document.documentElement.style.overflow = 'auto';
-                    // Reset background when closing
                     paneLogoBg.style.backgroundImage = 'none';
                     paneLogoBg.style.opacity = '0';
                     paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -2494,7 +3244,7 @@
             });
         }
         
-        // Scroll to top functionality
+        // Enhanced: Scroll to top functionality
         const scrollTopBtn = document.getElementById('scrollTop');
         
         window.addEventListener('scroll', () => {
@@ -2512,9 +3262,9 @@
             });
         });
         
-        // Animate elements on scroll
+        // Enhanced: Animate elements on scroll
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.paragraph, .event-card, .coordinator-box');
+            const elements = document.querySelectorAll('.paragraph, .event-card, .coordinator-box, .spot-registration, .detail-box, .social-icons a');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -2527,206 +3277,89 @@
             });
         }
         
-        // Set initial state for animation
-        document.querySelectorAll('.paragraph, .event-card, .coordinator-box').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        // Registration button functionality
+        // Enhanced: Registration button functionality
         function setupRegistrationButtons() {
             const registerButtons = document.querySelectorAll('.register-btn');
             
             registerButtons.forEach(btn => {
                 btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.width = ripple.style.height = `${size}px`;
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    ripple.classList.add('ripple');
-                    
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 600);
-                    
-                    const modal = document.createElement('div');
-                    modal.style.cssText = `
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0,0,0,0.95);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        z-index: 2001;
-                        backdrop-filter: blur(10px);
-                        padding: 1rem;
-                    `;
-                    
-                    modal.innerHTML = `
-                        <div style="background: linear-gradient(135deg, #1a237e, #3949ab); 
-                        padding: clamp(1.5rem, 4vw, 2.5rem); 
-                        border-radius: 1rem; 
-                        max-width: min(500px, 95vw); 
-                        width: 100%;
-                        border: 2px solid rgba(255, 152, 0, 0.4);
-                        box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(255, 152, 0, 0.3);
-                        position: relative;">
-                            <button style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(255, 87, 34, 0.2); border: 2px solid rgba(255, 87, 34, 0.3); color: white; font-size: 1.5rem; cursor: pointer; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%;" aria-label="Close">×</button>
-                            <h2 style="color: var(--highlight); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-size: clamp(1.3rem, 3vw, 1.8rem); text-align: center;">REGISTRATION</h2>
-                            <p style="color: #e0e0ff; margin-bottom: 1.5rem; line-height: 1.6; font-size: clamp(0.9rem, 2vw, 1.1rem); text-align: center;">Registration portal will open on 15th January 2026. Stay tuned for updates on our website and social media.</p>
-                            <button style="background: linear-gradient(135deg, var(--highlight), var(--highlight2)); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 2.5rem; font-weight: bold; cursor: pointer; width: 100%; font-family: 'Orbitron', sans-serif; font-size: clamp(0.9rem, 2vw, 1.1rem); margin-top: 1rem;">NOTIFY ME</button>
-                        </div>
-                    `;
-                    
-                    document.body.appendChild(modal);
-                    
-                    const closeBtn = modal.querySelector('button');
-                    closeBtn.addEventListener('click', () => {
-                        modal.style.opacity = '0';
-                        setTimeout(() => modal.remove(), 300);
-                    });
-                    
-                    modal.addEventListener('click', (e) => {
-                        if (e.target === modal) {
-                            modal.style.opacity = '0';
-                            setTimeout(() => modal.remove(), 300);
-                        }
-                    });
-                    
-                    document.body.style.overflow = 'hidden';
-                    
-                    const notifyBtn = modal.querySelector('button:last-child');
-                    notifyBtn.addEventListener('click', () => {
-                        alert('You will be notified when registration opens!');
-                        modal.style.opacity = '0';
+                    if (!this.getAttribute('href')) {
+                        e.preventDefault();
+                        
+                        const ripple = document.createElement('span');
+                        const rect = this.getBoundingClientRect();
+                        const size = Math.max(rect.width, rect.height);
+                        const x = e.clientX - rect.left - size / 2;
+                        const y = e.clientY - rect.top - size / 2;
+                        
+                        ripple.style.width = ripple.style.height = `${size}px`;
+                        ripple.style.left = `${x}px`;
+                        ripple.style.top = `${y}px`;
+                        ripple.classList.add('ripple');
+                        
+                        this.appendChild(ripple);
+                        
                         setTimeout(() => {
-                            modal.remove();
-                            document.body.style.overflow = 'auto';
-                        }, 300);
-                    });
+                            ripple.remove();
+                        }, 600);
+                    }
                 });
             });
         }
         
-        // Typewriter effect for event title
-        function initTypewriterEffect() {
-            const eventTitle = document.querySelector('.event-title');
-            if (!eventTitle) return;
-            
-            const originalText = eventTitle.textContent;
-            eventTitle.textContent = '';
-            
-            let i = 0;
-            function typeWriter() {
-                if (i < originalText.length) {
-                    eventTitle.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    if (window.innerWidth > 768) {
-                        const cursor = document.createElement('span');
-                        cursor.textContent = '|';
-                        cursor.style.animation = 'blink 1s infinite';
-                        eventTitle.appendChild(cursor);
-                    }
-                }
-            }
-            
-            setTimeout(typeWriter, 800);
-        }
-        
-        // Add ripple effect CSS
-        function addRippleStyles() {
-            const style = document.createElement('style');
-            style.textContent = `
-                .ripple {
-                    position: absolute;
-                    border-radius: 50%;
-                    background: rgba(255, 255, 255, 0.6);
-                    transform: scale(0);
-                    animation: ripple-animation 0.6s linear;
-                    pointer-events: none;
-                }
-                
-                @keyframes ripple-animation {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-                
-                @keyframes ripple {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-                
-                @keyframes blink {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0; }
-                }
-                
-                /* Smooth transitions for logo background */
-                .pane-logo-bg {
-                    transition: background-image 0.5s ease, opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
-                }
-            `;
-            document.head.appendChild(style);
-        }
-        
-        // Handle orientation change
+        // NEW: Handle orientation change
         function handleOrientationChange() {
             adjustForScreenSize();
+            createStars();
             createTechElements();
             createParticles();
+            createFloatingText();
         }
         
-        // Initialize everything
+        // NEW: Initialize everything - REMOVED LOADING SCREEN DELAYS
         function init() {
             adjustForScreenSize();
+            createStars();
             createTechElements();
             createParticles();
+            createFloatingText();
+            animateSubtitleParts();
             setupLogo();
+            updateGoogleFormLinks();
             setupEventPanes();
             setupRegistrationButtons();
             addRippleStyles();
             initTypewriterEffect();
-            animateOnScroll();
             
+            // Start animations immediately - REMOVED loading delay
             setTimeout(animateOnScroll, 100);
+            
+            // Initialize scroll animations
+            window.addEventListener('scroll', animateOnScroll);
         }
         
+        // Initialize immediately when DOM is ready
         document.addEventListener('DOMContentLoaded', init);
         
+        // Handle resize
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
                 adjustForScreenSize();
+                createStars();
                 createTechElements();
                 createParticles();
+                createFloatingText();
             }, 250);
         });
         
         window.addEventListener('orientationchange', handleOrientationChange);
-        window.addEventListener('scroll', animateOnScroll);
         
+        // Final adjustments after load
         window.addEventListener('load', () => {
             setTimeout(adjustForScreenSize, 100);
+            animateOnScroll();
         });
     </script>
 </body>
