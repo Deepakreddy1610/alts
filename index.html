@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>E-Udbhav 2k26 - Technical Events | ALITS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #0a0e29;
@@ -23,7 +26,7 @@
             --whatsapp: #25D366;
             --instagram: #E4405F;
             --youtube: #FF0000;
-            
+
             /* Responsive font sizes */
             --font-scale: 1;
             --h1-size: calc(2.5rem * var(--font-scale));
@@ -32,18 +35,18 @@
             --body-size: calc(1rem * var(--font-scale));
             --small-size: calc(0.875rem * var(--font-scale));
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
             font-size: 100%;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -58,13 +61,21 @@
             width: 100%;
             max-width: 100vw;
         }
-        
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        
+
         /* NEW: Animated stars background */
         .stars {
             position: fixed;
@@ -75,19 +86,26 @@
             z-index: -4;
             pointer-events: none;
         }
-        
+
         .star {
             position: absolute;
             background: white;
             border-radius: 50%;
             animation: twinkle var(--duration) infinite ease-in-out;
         }
-        
+
         @keyframes twinkle {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
-        
+
         /* Animated circuit lines background */
         .circuit-lines {
             position: fixed;
@@ -97,18 +115,25 @@
             height: 100%;
             z-index: -3;
             opacity: 0.15;
-            background-image: 
+            background-image:
                 linear-gradient(90deg, transparent 49%, var(--neon-blue) 50%, transparent 51%),
                 linear-gradient(0deg, transparent 49%, var(--neon-blue) 50%, transparent 51%);
             background-size: 60px 60px;
             animation: circuitPulse 4s infinite alternate;
         }
-        
+
         @keyframes circuitPulse {
-            0% { opacity: 0.1; transform: scale(1); }
-            100% { opacity: 0.25; transform: scale(1.02); }
+            0% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.25;
+                transform: scale(1.02);
+            }
         }
-        
+
         /* Floating tech elements - ENHANCED */
         .tech-elements {
             position: fixed;
@@ -119,7 +144,7 @@
             z-index: -2;
             pointer-events: none;
         }
-        
+
         .tech-element {
             position: absolute;
             font-size: 1.5rem;
@@ -128,12 +153,17 @@
             color: var(--neon-blue);
             text-shadow: 0 0 10px currentColor;
         }
-        
+
         @keyframes floatElement {
-            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); }
-            100% { transform: translateY(-100px) rotate(360deg) scale(1); }
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(1);
+            }
         }
-        
+
         /* Glowing particles - ENHANCED */
         .particles-container {
             position: fixed;
@@ -144,7 +174,7 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -153,14 +183,27 @@
             animation: particleFloat 15s infinite linear;
             filter: blur(1px);
         }
-        
+
         @keyframes particleFloat {
-            0% { transform: translateY(100vh) translateX(0) scale(0.5); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100px) translateX(100px) scale(1); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) scale(1);
+                opacity: 0;
+            }
         }
-        
+
         /* NEW: Floating text animation */
         .floating-text {
             position: absolute;
@@ -172,14 +215,27 @@
             pointer-events: none;
             z-index: -1;
         }
-        
+
         @keyframes floatText {
-            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.1; }
-            90% { opacity: 0.1; }
-            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.1;
+            }
+
+            90% {
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
         }
-        
+
         /* Container */
         .container {
             width: 100%;
@@ -189,7 +245,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         /* College Header with Enhanced Design - MORE ANIMATIONS */
         .college-header {
             text-align: center;
@@ -199,7 +255,7 @@
             backdrop-filter: blur(25px);
             border-radius: 1.5rem;
             border: 2px solid rgba(0, 229, 255, 0.3);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.4),
                 0 0 30px rgba(0, 229, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -208,21 +264,28 @@
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             animation: headerEntrance 1s ease-out;
         }
-        
+
         @keyframes headerEntrance {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .college-header:hover {
             transform: translateY(-5px) scale(1.005);
-            box-shadow: 
+            box-shadow:
                 0 35px 80px rgba(0, 0, 0, 0.5),
                 0 0 40px rgba(0, 229, 255, 0.3),
                 0 0 60px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
-        
+
         .college-header::before {
             content: '';
             position: absolute;
@@ -233,7 +296,7 @@
             background: linear-gradient(45deg, transparent 30%, rgba(0, 229, 255, 0.08) 50%, transparent 70%);
             animation: shine 8s infinite linear;
         }
-        
+
         .college-header::after {
             content: '';
             position: absolute;
@@ -241,16 +304,16 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--neon-blue),
-                var(--highlight),
-                var(--highlight3),
-                var(--neon-pink),
-                var(--neon-blue));
+            background: linear-gradient(90deg,
+                    var(--neon-blue),
+                    var(--highlight),
+                    var(--highlight3),
+                    var(--neon-pink),
+                    var(--neon-blue));
             background-size: 300% 100%;
             animation: gradientFlow 3s infinite linear;
         }
-        
+
         .college-logo-title-container {
             display: flex;
             align-items: center;
@@ -259,7 +322,7 @@
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
-        
+
         .college-logo {
             width: clamp(80px, 12vw, 120px);
             height: clamp(80px, 12vw, 120px);
@@ -268,7 +331,7 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
             padding: 0.75rem;
             border: 3px solid rgba(0, 229, 255, 0.4);
-            box-shadow: 
+            box-shadow:
                 0 0 30px rgba(0, 229, 255, 0.4),
                 0 10px 35px rgba(0, 0, 0, 0.4),
                 inset 0 0 20px rgba(0, 229, 255, 0.1);
@@ -279,12 +342,19 @@
             overflow: hidden;
             animation: logoFloat 3s infinite ease-in-out;
         }
-        
+
         @keyframes logoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         .college-logo::before {
             content: '';
             position: absolute;
@@ -296,28 +366,38 @@
             transform: rotate(45deg);
             animation: logoShine 6s infinite linear;
         }
-        
+
         @keyframes logoShine {
-            0% { transform: rotate(45deg) translateX(-100%); }
-            100% { transform: rotate(45deg) translateX(100%); }
+            0% {
+                transform: rotate(45deg) translateX(-100%);
+            }
+
+            100% {
+                transform: rotate(45deg) translateX(100%);
+            }
         }
-        
+
         .college-logo:hover {
             transform: scale(1.08) rotate(5deg);
             border-color: var(--highlight);
-            box-shadow: 
+            box-shadow:
                 0 0 50px rgba(255, 152, 0, 0.6),
                 0 15px 45px rgba(0, 0, 0, 0.5),
                 0 0 30px rgba(124, 77, 255, 0.4),
                 inset 0 0 30px rgba(255, 152, 0, 0.2);
             animation: logoPulse 1s infinite alternate;
         }
-        
+
         @keyframes logoPulse {
-            0% { box-shadow: 0 0 50px rgba(255, 152, 0, 0.6), 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 77, 255, 0.4), inset 0 0 30px rgba(255, 152, 0, 0.2); }
-            100% { box-shadow: 0 0 60px rgba(255, 152, 0, 0.8), 0 20px 55px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.6), inset 0 0 40px rgba(255, 152, 0, 0.3); }
+            0% {
+                box-shadow: 0 0 50px rgba(255, 152, 0, 0.6), 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 77, 255, 0.4), inset 0 0 30px rgba(255, 152, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 0 60px rgba(255, 152, 0, 0.8), 0 20px 55px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.6), inset 0 0 40px rgba(255, 152, 0, 0.3);
+            }
         }
-        
+
         .college-name-container {
             flex-grow: 1;
             min-width: 300px;
@@ -325,14 +405,14 @@
             position: relative;
             padding: 0.5rem 0;
         }
-        
+
         /* Improved College Name Styles */
         .college-main-name {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: clamp(1.4rem, 4vw, 2.2rem);
             color: white;
-            text-shadow: 
+            text-shadow:
                 0 0 15px rgba(0, 229, 255, 0.8),
                 0 0 30px rgba(0, 229, 255, 0.4),
                 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -349,12 +429,17 @@
             padding: 0 0.5rem;
             animation: nameGlow 3s infinite alternate;
         }
-        
+
         @keyframes nameGlow {
-            0% { text-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 30px rgba(0, 229, 255, 0.4), 0 2px 5px rgba(0, 0, 0, 0.3); }
-            100% { text-shadow: 0 0 20px rgba(0, 229, 255, 1), 0 0 40px rgba(0, 229, 255, 0.6), 0 2px 5px rgba(0, 0, 0, 0.3); }
+            0% {
+                text-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 30px rgba(0, 229, 255, 0.4), 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            100% {
+                text-shadow: 0 0 20px rgba(0, 229, 255, 1), 0 0 40px rgba(0, 229, 255, 0.6), 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
         }
-        
+
         .college-main-name::after {
             content: '';
             position: absolute;
@@ -362,21 +447,28 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--neon-blue), 
-                var(--highlight), 
-                var(--neon-blue), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--neon-blue),
+                    var(--highlight),
+                    var(--neon-blue),
+                    transparent);
             border-radius: 2px;
             animation: underlinePulse 3s infinite alternate;
         }
-        
+
         @keyframes underlinePulse {
-            0% { opacity: 0.5; transform: scaleX(0.9); }
-            100% { opacity: 1; transform: scaleX(1); }
+            0% {
+                opacity: 0.5;
+                transform: scaleX(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
         }
-        
+
         /* New subtitle styling for single line */
         .college-subtitle-line {
             font-family: 'Rajdhani', sans-serif;
@@ -393,12 +485,19 @@
             line-height: 1.4;
             animation: subtitleSlide 1s ease-out;
         }
-        
+
         @keyframes subtitleSlide {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .subtitle-part {
             display: inline-flex;
             align-items: center;
@@ -407,34 +506,53 @@
             animation: partFadeIn 0.5s ease-out forwards;
             opacity: 0;
         }
-        
+
         @keyframes partFadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
-        
+
         .divider {
             color: rgba(0, 229, 255, 0.5);
             font-weight: 300;
             animation: dividerBlink 2s infinite;
         }
-        
+
         @keyframes dividerBlink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
-        
+
         .award-icon {
             color: var(--highlight);
             font-size: 1.1rem;
             animation: awardFloat 3s infinite ease-in-out;
         }
-        
+
         @keyframes awardFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-3px) rotate(-5deg); }
-            75% { transform: translateY(-3px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-3px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-3px) rotate(5deg);
+            }
         }
-        
+
         .department {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -446,23 +564,30 @@
             text-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
             letter-spacing: 1px;
             padding: 0.5rem 1.5rem;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 152, 0, 0.1), 
-                rgba(255, 152, 0, 0.2), 
-                rgba(255, 152, 0, 0.1), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 152, 0, 0.1),
+                    rgba(255, 152, 0, 0.2),
+                    rgba(255, 152, 0, 0.1),
+                    transparent);
             border-radius: 10px;
             position: relative;
             overflow: hidden;
             animation: departmentEntrance 1s ease-out 0.2s both;
         }
-        
+
         @keyframes departmentEntrance {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .department::before {
             content: '';
             position: absolute;
@@ -470,19 +595,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.1),
+                    transparent);
             transform: translateX(-100%);
             animation: departmentShine 3s infinite;
         }
-        
+
         @keyframes departmentShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
+
         .campus {
             font-style: italic;
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
@@ -501,30 +631,42 @@
             transition: all 0.3s ease;
             animation: campusEntrance 1s ease-out 0.4s both;
         }
-        
+
         @keyframes campusEntrance {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .campus:hover {
             background: rgba(26, 35, 126, 0.5);
             border-color: rgba(0, 229, 255, 0.4);
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
-        
+
         .campus i {
             color: var(--highlight);
             font-size: 1.2rem;
             animation: locationPulse 2s infinite alternate;
         }
-        
+
         @keyframes locationPulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
         }
-        
+
         /* Event Header - Below College Name - ENHANCED */
         .event-header {
             text-align: center;
@@ -534,7 +676,7 @@
             backdrop-filter: blur(15px);
             border-radius: 1.25rem;
             border: 2px solid rgba(255, 152, 0, 0.3);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
@@ -543,21 +685,28 @@
             width: 100%;
             animation: eventHeaderEntrance 1.5s ease-out 0.6s both;
         }
-        
+
         @keyframes eventHeaderEntrance {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .event-header:hover {
             transform: translateY(-10px) scale(1.005);
-            box-shadow: 
+            box-shadow:
                 0 35px 80px rgba(0, 0, 0, 0.5),
                 0 0 30px rgba(255, 152, 0, 0.2),
                 0 0 40px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
-        
+
         .event-header::before {
             content: '';
             position: absolute;
@@ -565,19 +714,24 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, 
-                var(--highlight), 
-                var(--highlight2), 
-                var(--highlight3), 
-                var(--neon-blue));
+            background: linear-gradient(90deg,
+                    var(--highlight),
+                    var(--highlight2),
+                    var(--highlight3),
+                    var(--neon-blue));
             animation: headerLineFlow 3s infinite linear;
         }
-        
+
         @keyframes headerLineFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 200% 0%; }
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 200% 0%;
+            }
         }
-        
+
         .event-header::after {
             content: '';
             position: absolute;
@@ -591,18 +745,25 @@
             z-index: -1;
             animation: pulseGlow 4s infinite alternate;
         }
-        
+
         @keyframes pulseGlow {
-            0% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.8); }
-            100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+            0% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+
+            100% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
         }
-        
+
         .event-title {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
             font-size: clamp(2rem, 8vw, 4.5rem);
             color: white;
-            text-shadow: 
+            text-shadow:
                 0 0 20px rgba(255, 152, 0, 0.8),
                 0 0 40px rgba(255, 152, 0, 0.4),
                 0 0 60px rgba(255, 152, 0, 0.2);
@@ -613,17 +774,29 @@
             overflow-wrap: break-word;
             animation: titleGlow 4s infinite alternate, titleEntrance 2s ease-out 0.8s both;
         }
-        
+
         @keyframes titleEntrance {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes titleGlow {
-            0% { text-shadow: 0 0 20px rgba(255, 152, 0, 0.8), 0 0 40px rgba(255, 152, 0, 0.4), 0 0 60px rgba(255, 152, 0, 0.2); }
-            100% { text-shadow: 0 0 30px rgba(255, 152, 0, 1), 0 0 60px rgba(255, 152, 0, 0.6), 0 0 90px rgba(255, 152, 0, 0.4); }
+            0% {
+                text-shadow: 0 0 20px rgba(255, 152, 0, 0.8), 0 0 40px rgba(255, 152, 0, 0.4), 0 0 60px rgba(255, 152, 0, 0.2);
+            }
+
+            100% {
+                text-shadow: 0 0 30px rgba(255, 152, 0, 1), 0 0 60px rgba(255, 152, 0, 0.6), 0 0 90px rgba(255, 152, 0, 0.4);
+            }
         }
-        
+
         .event-subtitle {
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
@@ -634,12 +807,19 @@
             line-height: 1.3;
             animation: subtitleEntrance 1.5s ease-out 1s both;
         }
-        
+
         @keyframes subtitleEntrance {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         /* Date Badge - ENHANCED */
         .date-badge {
             display: inline-flex;
@@ -654,7 +834,7 @@
             font-weight: 700;
             font-size: clamp(0.9rem, 2.5vw, 1.4rem);
             margin: 1.25rem 0;
-            box-shadow: 
+            box-shadow:
                 0 10px 30px rgba(0, 0, 0, 0.3),
                 0 0 20px rgba(255, 87, 34, 0.3);
             border: 1px solid rgba(255, 152, 0, 0.3);
@@ -664,26 +844,43 @@
             transition: all 0.4s ease;
             animation: badgeFloat 5s infinite ease-in-out, badgeEntrance 1s ease-out 1.2s both;
         }
-        
+
         @keyframes badgeEntrance {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes badgeFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(-1deg); }
-            75% { transform: translateY(-10px) rotate(1deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(1deg);
+            }
         }
-        
+
         .date-badge:hover {
             transform: scale(1.05) rotate(2deg);
-            box-shadow: 
+            box-shadow:
                 0 15px 40px rgba(0, 0, 0, 0.4),
                 0 0 30px rgba(255, 87, 34, 0.5),
                 0 0 40px rgba(124, 77, 255, 0.3);
         }
-        
+
         .date-badge::before {
             content: '';
             position: absolute;
@@ -697,16 +894,21 @@
             z-index: -1;
             animation: badgeShine 4s infinite linear;
         }
-        
+
         @keyframes badgeShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
+
         .date-badge:hover::before {
             opacity: 1;
         }
-        
+
         /* Content Sections - ENHANCED */
         .content {
             background: rgba(10, 14, 41, 0.8);
@@ -715,7 +917,7 @@
             padding: clamp(1.5rem, 4vw, 3.75rem);
             margin-bottom: 2.5rem;
             border: 2px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 
+            box-shadow:
                 0 30px 70px rgba(0, 0, 0, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
             position: relative;
@@ -723,12 +925,19 @@
             width: 100%;
             animation: contentEntrance 1s ease-out 1.4s both;
         }
-        
+
         @keyframes contentEntrance {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .content::before {
             content: '';
             position: absolute;
@@ -741,7 +950,7 @@
             z-index: -1;
             animation: orbRotate 30s infinite linear;
         }
-        
+
         .content::after {
             content: '';
             position: absolute;
@@ -754,12 +963,17 @@
             z-index: -1;
             animation: orbRotate 35s infinite linear reverse;
         }
-        
+
         @keyframes orbRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -775,12 +989,19 @@
             line-height: 1.3;
             animation: sectionTitleEntrance 0.8s ease-out both;
         }
-        
+
         @keyframes sectionTitleEntrance {
-            0% { transform: translateX(-50px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-        
+
         .section-title::before {
             content: '';
             position: absolute;
@@ -791,12 +1012,17 @@
             background: linear-gradient(90deg, var(--highlight), transparent);
             animation: titleLineExtend 3s infinite alternate;
         }
-        
+
         @keyframes titleLineExtend {
-            0% { width: 100px; }
-            100% { width: 150px; }
+            0% {
+                width: 100px;
+            }
+
+            100% {
+                width: 150px;
+            }
         }
-        
+
         .section-title i {
             margin-right: 1rem;
             color: var(--neon-blue);
@@ -812,12 +1038,21 @@
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             animation: iconPulse 3s infinite ease-in-out;
         }
-        
+
         @keyframes iconPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 229, 255, 0.4); }
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+            }
         }
-        
+
         .paragraph {
             margin-bottom: 1.75rem;
             font-size: clamp(0.95rem, 2vw, 1.2rem);
@@ -833,21 +1068,28 @@
             width: 100%;
             animation: paragraphEntrance 0.8s ease-out both;
         }
-        
+
         @keyframes paragraphEntrance {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .paragraph:hover {
             transform: translateY(-5px) scale(1.005);
-            box-shadow: 
+            box-shadow:
                 0 15px 30px rgba(0, 0, 0, 0.2),
                 0 0 20px rgba(255, 152, 0, 0.1),
                 0 0 30px rgba(124, 77, 255, 0.1);
             border-left-color: var(--neon-blue);
         }
-        
+
         .highlight {
             color: var(--neon-blue);
             font-weight: 600;
@@ -855,12 +1097,19 @@
             padding: 0 0.25rem;
             animation: highlightPulse 3s infinite;
         }
-        
+
         @keyframes highlightPulse {
-            0%, 100% { text-shadow: 0 0 5px var(--neon-blue); }
-            50% { text-shadow: 0 0 15px var(--neon-blue); }
+
+            0%,
+            100% {
+                text-shadow: 0 0 5px var(--neon-blue);
+            }
+
+            50% {
+                text-shadow: 0 0 15px var(--neon-blue);
+            }
         }
-        
+
         .highlight::before {
             content: '';
             position: absolute;
@@ -874,12 +1123,12 @@
             transform-origin: right;
             transition: transform 0.3s ease;
         }
-        
+
         .highlight:hover::before {
             transform: scaleX(1);
             transform-origin: left;
         }
-        
+
         /* Event Cards - ENHANCED */
         .event-highlights {
             display: grid;
@@ -888,12 +1137,12 @@
             margin: 2.5rem 0;
             width: 100%;
         }
-        
+
         .event-card {
             background: linear-gradient(145deg, rgba(26, 35, 126, 0.5), rgba(10, 14, 41, 0.8));
             border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -905,19 +1154,43 @@
             width: 100%;
             animation: cardEntrance 0.8s ease-out both;
         }
-        
-        .event-card:nth-child(1) { animation-delay: 0.1s; }
-        .event-card:nth-child(2) { animation-delay: 0.2s; }
-        .event-card:nth-child(3) { animation-delay: 0.3s; }
-        .event-card:nth-child(4) { animation-delay: 0.4s; }
-        .event-card:nth-child(5) { animation-delay: 0.5s; }
-        .event-card:nth-child(6) { animation-delay: 0.6s; }
-        
-        @keyframes cardEntrance {
-            0% { transform: translateY(50px) scale(0.9); opacity: 0; }
-            100% { transform: translateY(0) scale(1); opacity: 1; }
+
+        .event-card:nth-child(1) {
+            animation-delay: 0.1s;
         }
-        
+
+        .event-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .event-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .event-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .event-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .event-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes cardEntrance {
+            0% {
+                transform: translateY(50px) scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
         .event-card::before {
             content: '';
             position: absolute;
@@ -930,21 +1203,21 @@
             transition: opacity 0.5s ease;
             z-index: -1;
         }
-        
+
         .event-card:hover {
             transform: translateY(-20px) scale(1.03) rotate(1deg);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.3),
                 0 0 40px rgba(255, 152, 0, 0.2),
                 0 0 50px rgba(124, 77, 255, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 152, 0, 0.3);
         }
-        
+
         .event-card:hover::before {
             opacity: 1;
         }
-        
+
         .event-card h3 {
             color: white;
             margin-bottom: 1rem;
@@ -956,7 +1229,7 @@
             font-size: clamp(1.2rem, 2.5vw, 1.6rem);
             line-height: 1.3;
         }
-        
+
         .event-card h3 i {
             color: var(--highlight);
             font-size: clamp(1.5rem, 3vw, 2.2rem);
@@ -972,12 +1245,19 @@
             flex-shrink: 0;
             animation: cardIconFloat 4s infinite ease-in-out;
         }
-        
+
         @keyframes cardIconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
         }
-        
+
         .event-card:hover h3 i {
             color: var(--neon-blue);
             border-color: rgba(0, 229, 255, 0.5);
@@ -986,13 +1266,13 @@
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
             animation: none;
         }
-        
+
         .event-card p {
             color: #c0c0ff;
             font-size: clamp(0.9rem, 2vw, 1.1rem);
             line-height: 1.6;
         }
-        
+
         .event-card .read-more {
             margin-top: 1rem;
             color: var(--neon-blue);
@@ -1004,13 +1284,13 @@
             opacity: 0.8;
             transition: all 0.3s ease;
         }
-        
+
         .event-card:hover .read-more {
             opacity: 1;
             gap: 0.75rem;
             transform: translateX(5px);
         }
-        
+
         /* EVENT DETAIL PANE/MODAL - ENHANCED */
         .event-detail-pane {
             position: fixed;
@@ -1030,17 +1310,22 @@
             padding: 1rem;
             animation: paneOverlay 0.5s ease;
         }
-        
+
         @keyframes paneOverlay {
-            from { background: rgba(0, 0, 0, 0); }
-            to { background: rgba(0, 0, 0, 0.95); }
+            from {
+                background: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background: rgba(0, 0, 0, 0.95);
+            }
         }
-        
+
         .event-detail-pane.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .pane-content {
             background: linear-gradient(135deg, rgba(10, 14, 41, 0.9), rgba(26, 35, 126, 0.9));
             width: 100%;
@@ -1048,7 +1333,7 @@
             max-height: min(90vh, 90vw);
             border-radius: 1.5rem;
             border: 2px solid rgba(255, 152, 0, 0.4);
-            box-shadow: 
+            box-shadow:
                 0 40px 100px rgba(0, 0, 0, 0.7),
                 0 0 60px rgba(255, 152, 0, 0.3),
                 0 0 80px rgba(124, 77, 255, 0.2),
@@ -1061,12 +1346,17 @@
             flex-direction: column;
             animation: paneContentGlow 4s infinite alternate;
         }
-        
+
         @keyframes paneContentGlow {
-            0% { box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(255, 152, 0, 0.3), 0 0 80px rgba(124, 77, 255, 0.2); }
-            100% { box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 80px rgba(255, 152, 0, 0.4), 0 0 100px rgba(124, 77, 255, 0.3); }
+            0% {
+                box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(255, 152, 0, 0.3), 0 0 80px rgba(124, 77, 255, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 80px rgba(255, 152, 0, 0.4), 0 0 100px rgba(124, 77, 255, 0.3);
+            }
         }
-        
+
         /* Logo Background - ENHANCED */
         .pane-logo-bg {
             position: absolute;
@@ -1085,12 +1375,19 @@
             pointer-events: none;
             animation: logoBgPulse 5s infinite alternate;
         }
-        
+
         @keyframes logoBgPulse {
-            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
-            100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.05); }
+            0% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+
+            100% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
         }
-        
+
         /* Make overlay lighter for better logo visibility */
         .pane-content::before {
             content: '';
@@ -1099,16 +1396,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(10, 14, 41, 0.5) 0%,
-                rgba(10, 14, 41, 0.45) 30%,
-                rgba(10, 14, 41, 0.4) 50%,
-                rgba(10, 14, 41, 0.45) 70%,
-                rgba(10, 14, 41, 0.5) 100%);
+            background: linear-gradient(135deg,
+                    rgba(10, 14, 41, 0.5) 0%,
+                    rgba(10, 14, 41, 0.45) 30%,
+                    rgba(10, 14, 41, 0.4) 50%,
+                    rgba(10, 14, 41, 0.45) 70%,
+                    rgba(10, 14, 41, 0.5) 100%);
             z-index: 2;
             pointer-events: none;
         }
-        
+
         /* Optional: Add a subtle glow behind the logo */
         .pane-content::after {
             content: '';
@@ -1118,25 +1415,30 @@
             transform: translate(-50%, -50%);
             width: 90%;
             height: 90%;
-            background: radial-gradient(circle, 
-                rgba(255, 255, 255, 0.05) 0%, 
-                rgba(255, 255, 255, 0.02) 30%, 
-                transparent 70%);
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.02) 30%,
+                    transparent 70%);
             z-index: 0;
             pointer-events: none;
             filter: blur(10px);
             animation: paneGlowRotate 30s infinite linear;
         }
-        
+
         @keyframes paneGlowRotate {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
-        
+
         .event-detail-pane.active .pane-content {
             transform: translateY(0) scale(1);
         }
-        
+
         /* Make text more readable with better contrast */
         .pane-header {
             padding: 1.5rem;
@@ -1152,12 +1454,19 @@
             backdrop-filter: blur(5px);
             animation: paneHeaderEntrance 0.5s ease-out 0.2s both;
         }
-        
+
         @keyframes paneHeaderEntrance {
-            0% { transform: translateY(-20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .pane-header h2 {
             font-family: 'Orbitron', sans-serif;
             color: white;
@@ -1169,7 +1478,7 @@
             word-break: break-word;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        
+
         .pane-header h2 i {
             color: var(--highlight);
             background: rgba(255, 152, 0, 0.2);
@@ -1185,12 +1494,17 @@
             box-shadow: 0 0 25px rgba(255, 152, 0, 0.3);
             animation: paneIconSpin 15s infinite linear;
         }
-        
+
         @keyframes paneIconSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .close-pane {
             background: linear-gradient(135deg, rgba(255, 87, 34, 0.3), rgba(255, 152, 0, 0.3));
             border: 2px solid rgba(255, 87, 34, 0.4);
@@ -1210,12 +1524,19 @@
             box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
             animation: closeBtnPulse 3s infinite;
         }
-        
+
         @keyframes closeBtnPulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 87, 34, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(255, 87, 34, 0.5); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(255, 87, 34, 0.5);
+            }
         }
-        
+
         .close-pane:hover {
             background: linear-gradient(135deg, rgba(255, 87, 34, 0.5), rgba(255, 152, 0, 0.5));
             border-color: rgba(255, 87, 34, 0.7);
@@ -1223,7 +1544,7 @@
             box-shadow: 0 0 30px rgba(255, 87, 34, 0.5);
             animation: none;
         }
-        
+
         .pane-body {
             padding: 2rem;
             overflow-y: auto;
@@ -1234,32 +1555,44 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
             animation: paneBodyEntrance 0.5s ease-out 0.4s both;
         }
-        
+
         @keyframes paneBodyEntrance {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .pane-body::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         .pane-body::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 4px;
         }
-        
+
         .pane-body::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, var(--highlight), var(--highlight2));
             border-radius: 4px;
             animation: scrollThumbGlow 3s infinite alternate;
         }
-        
+
         @keyframes scrollThumbGlow {
-            0% { box-shadow: 0 0 5px var(--highlight); }
-            100% { box-shadow: 0 0 15px var(--highlight); }
+            0% {
+                box-shadow: 0 0 5px var(--highlight);
+            }
+
+            100% {
+                box-shadow: 0 0 15px var(--highlight);
+            }
         }
-        
+
         .pane-body h3 {
             color: var(--neon-blue);
             font-family: 'Rajdhani', sans-serif;
@@ -1272,11 +1605,11 @@
             text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
             animation: paneH3Entrance 0.5s ease-out both;
         }
-        
+
         .pane-body h3:first-child {
             margin-top: 0;
         }
-        
+
         .pane-body p {
             color: #f0f0ff;
             line-height: 1.7;
@@ -1284,13 +1617,13 @@
             text-shadow: 0 2px 3px rgba(0, 0, 0, 0.9);
             animation: panePEntrance 0.5s ease-out both;
         }
-        
+
         .pane-body ul {
             list-style: none;
             margin: 1.25rem 0;
             padding-left: 1.5rem;
         }
-        
+
         .pane-body li {
             color: #e0e0ff;
             padding: 0.75rem 0;
@@ -1301,7 +1634,7 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
             animation: paneLiEntrance 0.5s ease-out both;
         }
-        
+
         .pane-body li::before {
             content: '▸';
             color: var(--highlight);
@@ -1310,19 +1643,28 @@
             font-size: 1.2rem;
             animation: bulletPulse 3s infinite;
         }
-        
+
         @keyframes bulletPulse {
-            0%, 100% { opacity: 1; transform: translateX(0); }
-            50% { opacity: 0.5; transform: translateX(3px); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateX(3px);
+            }
         }
-        
+
         .event-details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 1.25rem;
             margin: 1.5rem 0;
         }
-        
+
         .detail-box {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 35, 126, 0.6));
             padding: 1.25rem;
@@ -1333,12 +1675,12 @@
             transition: transform 0.3s ease;
             animation: detailBoxEntrance 0.5s ease-out both;
         }
-        
+
         .detail-box:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
-        
+
         .detail-box h4 {
             color: var(--highlight);
             margin-bottom: 0.75rem;
@@ -1348,13 +1690,13 @@
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             font-family: 'Rajdhani', sans-serif;
         }
-        
+
         .detail-box p {
             font-size: clamp(0.9rem, 2vw, 1.1rem);
             line-height: 1.5;
             margin-bottom: 0;
         }
-        
+
         /* === SPOT REGISTRATION NOTIFICATION - ENHANCED === */
         .spot-registration {
             background: linear-gradient(135deg, rgba(255, 64, 129, 0.15), rgba(255, 64, 129, 0.05));
@@ -1362,7 +1704,7 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
             border: 2px solid rgba(255, 64, 129, 0.3);
-            box-shadow: 
+            box-shadow:
                 0 10px 30px rgba(255, 64, 129, 0.2),
                 0 0 20px rgba(255, 64, 129, 0.1),
                 inset 0 0 10px rgba(255, 255, 255, 0.05);
@@ -1370,27 +1712,35 @@
             overflow: hidden;
             animation: spotlightPulse 4s infinite alternate, spotEntrance 0.8s ease-out both;
         }
-        
+
         @keyframes spotEntrance {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes spotlightPulse {
-            0% { 
-                box-shadow: 
+            0% {
+                box-shadow:
                     0 10px 30px rgba(255, 64, 129, 0.2),
                     0 0 20px rgba(255, 64, 129, 0.1),
                     inset 0 0 10px rgba(255, 255, 255, 0.05);
             }
-            100% { 
-                box-shadow: 
+
+            100% {
+                box-shadow:
                     0 20px 50px rgba(255, 64, 129, 0.3),
                     0 0 40px rgba(255, 64, 129, 0.25),
                     inset 0 0 25px rgba(255, 255, 255, 0.08);
             }
         }
-        
+
         .spot-registration::before {
             content: '';
             position: absolute;
@@ -1398,22 +1748,22 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, 
-                transparent,
-                var(--neon-pink),
-                var(--highlight),
-                var(--neon-pink),
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--neon-pink),
+                    var(--highlight),
+                    var(--neon-pink),
+                    transparent);
             animation: gradientFlow 4s infinite linear;
         }
-        
+
         .spot-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .spot-icon {
             color: var(--neon-pink);
             background: rgba(255, 64, 129, 0.15);
@@ -1429,13 +1779,23 @@
             animation: spotIconFloat 3s infinite ease-in-out;
             flex-shrink: 0;
         }
-        
+
         @keyframes spotIconFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(-5deg); }
-            75% { transform: translateY(-10px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(5deg);
+            }
         }
-        
+
         .spot-title {
             color: white;
             font-family: 'Orbitron', sans-serif;
@@ -1444,7 +1804,7 @@
             text-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
             line-height: 1.3;
         }
-        
+
         .spot-title span {
             color: var(--neon-pink);
             background: linear-gradient(135deg, #ff4081, #ff9800);
@@ -1454,19 +1814,24 @@
             font-weight: 900;
             animation: spotTitleGlow 3s infinite alternate;
         }
-        
+
         @keyframes spotTitleGlow {
-            0% { text-shadow: 0 0 10px rgba(255, 64, 129, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(255, 64, 129, 0.8); }
+            0% {
+                text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+            }
+
+            100% {
+                text-shadow: 0 0 20px rgba(255, 64, 129, 0.8);
+            }
         }
-        
+
         .spot-content {
             color: #f0f0ff;
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1rem;
         }
-        
+
         .spot-highlight {
             background: rgba(255, 64, 129, 0.15);
             border-radius: 0.5rem;
@@ -1478,29 +1843,39 @@
             gap: 0.75rem;
             animation: spotHighlightPulse 3s infinite alternate;
         }
-        
+
         @keyframes spotHighlightPulse {
-            0% { background: rgba(255, 64, 129, 0.15); }
-            100% { background: rgba(255, 64, 129, 0.25); }
+            0% {
+                background: rgba(255, 64, 129, 0.15);
+            }
+
+            100% {
+                background: rgba(255, 64, 129, 0.25);
+            }
         }
-        
+
         .spot-highlight i {
             color: var(--neon-pink);
             font-size: 1.2rem;
             animation: spotIconSpin 4s infinite linear;
         }
-        
+
         @keyframes spotIconSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .spot-highlight p {
             color: white;
             font-weight: 600;
             margin: 0;
         }
-        
+
         /* Participation Info - ENHANCED */
         .participation-info {
             background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(57, 73, 171, 0.9));
@@ -1508,7 +1883,7 @@
             padding: clamp(1.5rem, 4vw, 3.125rem);
             border-radius: 1.25rem;
             margin: 2.5rem 0;
-            box-shadow: 
+            box-shadow:
                 0 20px 50px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
@@ -1517,12 +1892,19 @@
             width: 100%;
             animation: participationEntrance 0.8s ease-out both;
         }
-        
+
         @keyframes participationEntrance {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         .participation-info::before {
             content: '';
             position: absolute;
@@ -1534,7 +1916,7 @@
             border-radius: 50%;
             animation: rotate 25s infinite linear;
         }
-        
+
         .participation-info h3 {
             margin-bottom: 1.25rem;
             display: flex;
@@ -1545,7 +1927,7 @@
             color: var(--highlight);
             line-height: 1.3;
         }
-        
+
         .participation-info h3 i {
             color: var(--neon-blue);
             background: rgba(0, 229, 255, 0.1);
@@ -1560,12 +1942,19 @@
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             animation: participationIconFloat 4s infinite ease-in-out;
         }
-        
+
         @keyframes participationIconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         /* Coordinator Boxes - ENHANCED */
         .coordinators {
             display: grid;
@@ -1574,12 +1963,12 @@
             margin: 2.5rem 0;
             width: 100%;
         }
-        
+
         .coordinator-box {
             background: linear-gradient(145deg, rgba(26, 35, 126, 0.5), rgba(10, 14, 41, 0.8));
             border-radius: 1rem;
             padding: clamp(1.5rem, 3vw, 2.5rem);
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(124, 77, 255, 0.3);
@@ -1589,23 +1978,35 @@
             width: 100%;
             animation: coordinatorEntrance 0.8s ease-out both;
         }
-        
-        .coordinator-box:nth-child(1) { animation-delay: 0.1s; }
-        .coordinator-box:nth-child(2) { animation-delay: 0.2s; }
-        
-        @keyframes coordinatorEntrance {
-            0% { transform: translateX(-50px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+
+        .coordinator-box:nth-child(1) {
+            animation-delay: 0.1s;
         }
-        
+
+        .coordinator-box:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes coordinatorEntrance {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         .coordinator-box:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.3),
                 0 0 40px rgba(124, 77, 255, 0.2),
                 0 0 50px rgba(0, 229, 255, 0.2);
         }
-        
+
         .coordinator-box::before {
             content: '';
             position: absolute;
@@ -1616,12 +2017,17 @@
             background: linear-gradient(90deg, var(--highlight3), var(--neon-blue));
             animation: coordinatorLineFlow 3s infinite linear;
         }
-        
+
         @keyframes coordinatorLineFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 200% 0%; }
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 200% 0%;
+            }
         }
-        
+
         .coordinator-box h3 {
             color: white;
             margin-bottom: 1.25rem;
@@ -1633,7 +2039,7 @@
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             line-height: 1.3;
         }
-        
+
         .coordinator-box h3 i {
             color: var(--highlight3);
             background: rgba(124, 77, 255, 0.1);
@@ -1648,16 +2054,23 @@
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             animation: coordinatorIconFloat 4s infinite ease-in-out;
         }
-        
+
         @keyframes coordinatorIconFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(5deg);
+            }
         }
-        
+
         .coordinator-box ul {
             list-style: none;
         }
-        
+
         .coordinator-box li {
             padding: 0.75rem 0;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
@@ -1670,20 +2083,47 @@
             line-height: 1.4;
             animation: coordinatorLiEntrance 0.5s ease-out both;
         }
-        
-        .coordinator-box li:nth-child(1) { animation-delay: 0.1s; }
-        .coordinator-box li:nth-child(2) { animation-delay: 0.2s; }
-        .coordinator-box li:nth-child(3) { animation-delay: 0.3s; }
-        .coordinator-box li:nth-child(4) { animation-delay: 0.4s; }
-        .coordinator-box li:nth-child(5) { animation-delay: 0.5s; }
-        .coordinator-box li:nth-child(6) { animation-delay: 0.6s; }
-        .coordinator-box li:nth-child(7) { animation-delay: 0.7s; }
-        
-        @keyframes coordinatorLiEntrance {
-            0% { transform: translateX(-20px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+
+        .coordinator-box li:nth-child(1) {
+            animation-delay: 0.1s;
         }
-        
+
+        .coordinator-box li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .coordinator-box li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .coordinator-box li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .coordinator-box li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .coordinator-box li:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .coordinator-box li:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes coordinatorLiEntrance {
+            0% {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         .coordinator-box li:hover {
             transform: translateX(0.75rem) scale(1.02);
             color: white;
@@ -1692,7 +2132,7 @@
             padding-left: 1rem;
             border-radius: 0.25rem;
         }
-        
+
         .coordinator-box li::before {
             content: '▶';
             color: var(--highlight);
@@ -1701,18 +2141,25 @@
             transition: transform 0.3s ease;
             animation: coordinatorArrowBlink 3s infinite;
         }
-        
+
         @keyframes coordinatorArrowBlink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
-        
+
         .coordinator-box li:hover::before {
             transform: translateX(0.25rem);
             color: var(--neon-blue);
             animation: none;
         }
-        
+
         /* Register Button - ENHANCED */
         .register-btn {
             display: inline-flex;
@@ -1727,7 +2174,7 @@
             font-size: clamp(0.9rem, 2vw, 1.3rem);
             text-decoration: none;
             margin: 2rem 0;
-            box-shadow: 
+            box-shadow:
                 0 15px 40px rgba(255, 87, 34, 0.3),
                 0 0 30px rgba(255, 152, 0, 0.2);
             transition: all 0.4s ease;
@@ -1743,17 +2190,29 @@
             max-width: 100%;
             animation: registerBtnEntrance 0.8s ease-out both, registerBtnPulse 3s infinite alternate;
         }
-        
+
         @keyframes registerBtnEntrance {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes registerBtnPulse {
-            0% { box-shadow: 0 15px 40px rgba(255, 87, 34, 0.3), 0 0 30px rgba(255, 152, 0, 0.2); }
-            100% { box-shadow: 0 20px 50px rgba(255, 87, 34, 0.4), 0 0 40px rgba(255, 152, 0, 0.3); }
+            0% {
+                box-shadow: 0 15px 40px rgba(255, 87, 34, 0.3), 0 0 30px rgba(255, 152, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 20px 50px rgba(255, 87, 34, 0.4), 0 0 40px rgba(255, 152, 0, 0.3);
+            }
         }
-        
+
         .register-btn::before {
             content: '';
             position: absolute;
@@ -1766,21 +2225,21 @@
             transition: opacity 0.3s ease;
             z-index: -1;
         }
-        
+
         .register-btn:hover {
             transform: translateY(-8px) scale(1.05) rotate(2deg);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(255, 87, 34, 0.4),
                 0 0 50px rgba(255, 152, 0, 0.3),
                 0 0 60px rgba(124, 77, 255, 0.2);
             letter-spacing: 1px;
             animation: none;
         }
-        
+
         .register-btn:hover::before {
             opacity: 1;
         }
-        
+
         /* NEW: Animated register button effect */
         .register-btn::after {
             content: '';
@@ -1789,12 +2248,12 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--highlight), 
-                var(--highlight2), 
-                var(--highlight3), 
-                var(--neon-blue), 
-                var(--highlight));
+            background: linear-gradient(45deg,
+                    var(--highlight),
+                    var(--highlight2),
+                    var(--highlight3),
+                    var(--neon-blue),
+                    var(--highlight));
             background-size: 400% 400%;
             border-radius: 2.5rem;
             z-index: -2;
@@ -1802,16 +2261,21 @@
             transition: opacity 0.3s ease;
             animation: registerBtnBorder 4s infinite linear;
         }
-        
+
         @keyframes registerBtnBorder {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 400% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 400% 50%;
+            }
         }
-        
+
         .register-btn:hover::after {
             opacity: 1;
         }
-        
+
         /* Footer - ENHANCED */
         .footer {
             text-align: center;
@@ -1823,18 +2287,25 @@
             border-radius: 1.25rem;
             margin-top: 2.5rem;
             border: 1px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 
+            box-shadow:
                 0 20px 50px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
             width: 100%;
             animation: footerEntrance 0.8s ease-out both;
         }
-        
+
         @keyframes footerEntrance {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
+
         /* === ENHANCED SOCIAL MEDIA ICONS === */
         .social-icons {
             display: flex;
@@ -1843,7 +2314,7 @@
             margin-top: 1.5rem;
             flex-wrap: wrap;
         }
-        
+
         .social-icons a {
             display: flex;
             align-items: center;
@@ -1860,99 +2331,136 @@
             overflow: hidden;
             animation: socialIconEntrance 0.5s ease-out both, socialIconFloat 4s infinite ease-in-out;
         }
-        
-        .social-icons a:nth-child(1) { animation-delay: 0.1s; }
-        .social-icons a:nth-child(2) { animation-delay: 0.2s; }
-        .social-icons a:nth-child(3) { animation-delay: 0.3s; }
-        
+
+        .social-icons a:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .social-icons a:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .social-icons a:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
         @keyframes socialIconEntrance {
-            0% { transform: scale(0) rotate(180deg); opacity: 0; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            0% {
+                transform: scale(0) rotate(180deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes socialIconFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
         }
-        
+
         /* WhatsApp Icon */
         .whatsapp-icon {
             background: linear-gradient(135deg, var(--whatsapp), #128C7E) !important;
             border-color: rgba(37, 211, 102, 0.4) !important;
             color: white !important;
-            box-shadow: 
+            box-shadow:
                 0 10px 25px rgba(37, 211, 102, 0.3),
                 0 0 20px rgba(37, 211, 102, 0.2) !important;
         }
-        
+
         .whatsapp-icon:hover {
             background: linear-gradient(135deg, #128C7E, var(--whatsapp)) !important;
             transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(37, 211, 102, 0.4),
                 0 0 30px rgba(37, 211, 102, 0.3),
                 0 0 40px rgba(37, 211, 102, 0.2) !important;
             border-color: rgba(37, 211, 102, 0.7) !important;
             animation: whatsappPulse 1.5s infinite alternate !important;
         }
-        
+
         @keyframes whatsappPulse {
-            0% { box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4), 0 0 30px rgba(37, 211, 102, 0.3), 0 0 40px rgba(37, 211, 102, 0.2); }
-            100% { box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.4), 0 0 50px rgba(37, 211, 102, 0.3); }
+            0% {
+                box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4), 0 0 30px rgba(37, 211, 102, 0.3), 0 0 40px rgba(37, 211, 102, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.4), 0 0 50px rgba(37, 211, 102, 0.3);
+            }
         }
-        
+
         /* Instagram Icon */
         .instagram-icon {
             background: linear-gradient(135deg, var(--instagram), #833AB4, #405DE6) !important;
             border-color: rgba(228, 64, 95, 0.4) !important;
             color: white !important;
-            box-shadow: 
+            box-shadow:
                 0 10px 25px rgba(228, 64, 95, 0.3),
                 0 0 20px rgba(131, 58, 180, 0.2) !important;
         }
-        
+
         .instagram-icon:hover {
             background: linear-gradient(135deg, #405DE6, #833AB4, var(--instagram)) !important;
             transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(228, 64, 95, 0.4),
                 0 0 30px rgba(131, 58, 180, 0.3),
                 0 0 40px rgba(64, 93, 230, 0.2) !important;
             border-color: rgba(228, 64, 95, 0.7) !important;
             animation: instagramPulse 1.5s infinite alternate !important;
         }
-        
+
         @keyframes instagramPulse {
-            0% { box-shadow: 0 15px 35px rgba(228, 64, 95, 0.4), 0 0 30px rgba(131, 58, 180, 0.3), 0 0 40px rgba(64, 93, 230, 0.2); }
-            100% { box-shadow: 0 20px 45px rgba(228, 64, 95, 0.5), 0 0 40px rgba(131, 58, 180, 0.4), 0 0 50px rgba(64, 93, 230, 0.3); }
+            0% {
+                box-shadow: 0 15px 35px rgba(228, 64, 95, 0.4), 0 0 30px rgba(131, 58, 180, 0.3), 0 0 40px rgba(64, 93, 230, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 20px 45px rgba(228, 64, 95, 0.5), 0 0 40px rgba(131, 58, 180, 0.4), 0 0 50px rgba(64, 93, 230, 0.3);
+            }
         }
-        
+
         /* YouTube Icon */
         .youtube-icon {
             background: linear-gradient(135deg, var(--youtube), #C4302B) !important;
             border-color: rgba(255, 0, 0, 0.4) !important;
             color: white !important;
-            box-shadow: 
+            box-shadow:
                 0 10px 25px rgba(255, 0, 0, 0.3),
                 0 0 20px rgba(196, 48, 43, 0.2) !important;
         }
-        
+
         .youtube-icon:hover {
             background: linear-gradient(135deg, #C4302B, var(--youtube)) !important;
             transform: translateY(-10px) rotate(15deg) scale(1.1) !important;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(255, 0, 0, 0.4),
                 0 0 30px rgba(196, 48, 43, 0.3),
                 0 0 40px rgba(255, 0, 0, 0.2) !important;
             border-color: rgba(255, 0, 0, 0.7) !important;
             animation: youtubePulse 1.5s infinite alternate !important;
         }
-        
+
         @keyframes youtubePulse {
-            0% { box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4), 0 0 30px rgba(196, 48, 43, 0.3), 0 0 40px rgba(255, 0, 0, 0.2); }
-            100% { box-shadow: 0 20px 45px rgba(255, 0, 0, 0.5), 0 0 40px rgba(196, 48, 43, 0.4), 0 0 50px rgba(255, 0, 0, 0.3); }
+            0% {
+                box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4), 0 0 30px rgba(196, 48, 43, 0.3), 0 0 40px rgba(255, 0, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 20px 45px rgba(255, 0, 0, 0.5), 0 0 40px rgba(196, 48, 43, 0.4), 0 0 50px rgba(255, 0, 0, 0.3);
+            }
         }
-        
+
         /* Add platform logo animation to all social icons */
         .social-icons a::before {
             content: '';
@@ -1966,11 +2474,11 @@
             transition: opacity 0.3s ease;
             border-radius: 50%;
         }
-        
+
         .social-icons a:hover::before {
             opacity: 1;
         }
-        
+
         /* Scroll to top button - ENHANCED */
         .scroll-top {
             position: fixed;
@@ -1985,7 +2493,7 @@
             align-items: center;
             justify-content: center;
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            box-shadow: 
+            box-shadow:
                 0 10px 30px rgba(255, 87, 34, 0.3),
                 0 0 20px rgba(255, 152, 0, 0.2);
             cursor: pointer;
@@ -1996,311 +2504,317 @@
             border: none;
             animation: scrollTopPulse 3s infinite alternate;
         }
-        
+
         @keyframes scrollTopPulse {
-            0% { box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3), 0 0 20px rgba(255, 152, 0, 0.2); }
-            100% { box-shadow: 0 15px 40px rgba(255, 87, 34, 0.4), 0 0 30px rgba(255, 152, 0, 0.3); }
+            0% {
+                box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3), 0 0 20px rgba(255, 152, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 15px 40px rgba(255, 87, 34, 0.4), 0 0 30px rgba(255, 152, 0, 0.3);
+            }
         }
-        
+
         .scroll-top.active {
             opacity: 1;
             transform: translateY(0) scale(1) rotate(0deg);
         }
-        
+
         .scroll-top:hover {
             transform: translateY(-10px) scale(1.1) rotate(360deg);
-            box-shadow: 
+            box-shadow:
                 0 15px 40px rgba(255, 87, 34, 0.4),
                 0 0 30px rgba(255, 152, 0, 0.3),
                 0 0 40px rgba(124, 77, 255, 0.2);
             animation: none;
         }
-        
+
         /* Mouse follower effect REMOVED */
-        
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             html {
                 font-size: 14px;
             }
-            
+
             .container {
                 padding: 0.75rem;
             }
-            
+
             .college-logo-title-container {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 gap: 1rem;
             }
-            
+
             .college-name-container {
                 text-align: center;
                 min-width: unset;
             }
-            
+
             .college-main-name {
                 font-size: clamp(1.3rem, 5vw, 1.8rem);
                 text-align: center;
             }
-            
+
             .college-subtitle-line {
                 gap: 0.5rem;
                 justify-content: center;
             }
-            
+
             .subtitle-part {
                 font-size: 0.85rem;
             }
-            
+
             .divider {
                 display: none;
             }
-            
+
             .college-subtitle-line {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.5rem;
             }
-            
-            .department, .campus {
+
+            .department,
+            .campus {
                 text-align: center;
             }
-            
+
             .event-title {
                 animation: titleGlow 4s infinite alternate;
             }
-            
+
             .event-card:hover {
                 transform: translateY(-10px) scale(1.02);
             }
-            
+
             .coordinator-box li:hover {
                 transform: translateX(0.5rem) scale(1.01);
             }
-            
+
             .register-btn:hover {
                 transform: translateY(-5px) scale(1.03);
             }
-            
+
             /* Pane adjustments for mobile */
             .pane-content {
                 max-height: 95vh;
             }
-            
+
             .pane-body {
                 padding: 1.5rem;
             }
-            
+
             /* Adjust logo for mobile */
             .pane-logo-bg {
                 opacity: 0.5;
                 background-size: 80% auto;
             }
-            
+
             /* Spot registration mobile adjustments */
             .spot-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 0.75rem;
             }
-            
+
             .spot-icon {
                 width: 3rem;
                 height: 3rem;
                 font-size: 1.5rem;
             }
-            
+
             /* Stack elements vertically on very small screens */
             @media (max-width: 480px) {
                 .college-header {
                     padding: 1.5rem 1rem;
                 }
-                
+
                 .college-logo {
                     width: 90px;
                     height: 90px;
                 }
-                
+
                 .college-main-name {
                     font-size: 1.3rem;
                     line-height: 1.3;
                     padding: 0 0.25rem;
                 }
-                
+
                 .college-subtitle-line {
                     grid-template-columns: 1fr;
                     gap: 0.25rem;
                 }
-                
+
                 .event-title {
                     font-size: 1.8rem;
                 }
-                
+
                 .event-subtitle {
                     font-size: 1rem;
                 }
-                
+
                 .section-title {
                     flex-direction: column;
                     gap: 0.5rem;
                     text-align: center;
                 }
-                
+
                 .section-title i {
                     margin-right: 0;
                 }
-                
+
                 .date-badge {
                     flex-direction: column;
                     gap: 0.5rem;
                     padding: 0.75rem 1rem;
                 }
-                
+
                 .register-btn {
                     width: 100%;
                     justify-content: center;
                 }
-                
+
                 .pane-header {
                     flex-direction: column;
                     text-align: center;
                     gap: 0.75rem;
                 }
-                
+
                 .pane-header h2 {
                     flex-direction: column;
                     gap: 0.5rem;
                 }
-                
+
                 .social-icons a {
                     width: 2.8rem;
                     height: 2.8rem;
                     font-size: 1.2rem;
                 }
-                
+
                 .scroll-top {
                     bottom: 1rem;
                     right: 1rem;
                 }
-                
+
                 .pane-body {
                     padding: 1.25rem;
                 }
-                
+
                 .event-details-grid {
                     grid-template-columns: 1fr;
                 }
-                
+
                 .pane-logo-bg {
                     opacity: 0.45;
                     background-size: 85% auto;
                 }
-                
+
                 .spot-title {
                     font-size: 1.2rem;
                 }
             }
         }
-        
+
         /* Tablet-specific adjustments */
         @media (min-width: 769px) and (max-width: 1024px) {
             html {
                 font-size: 15px;
             }
-            
+
             .container {
                 padding: 1.25rem;
                 max-width: 95%;
             }
-            
+
             .event-highlights {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .coordinators {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .college-logo-title-container {
                 gap: 1.5rem;
             }
-            
+
             .pane-content {
                 max-width: 90vw;
             }
-            
+
             .pane-logo-bg {
                 opacity: 0.55;
             }
         }
-        
+
         /* Desktop adjustments */
         @media (min-width: 1025px) {
             .container {
                 max-width: 1200px;
                 padding: 1.5rem;
             }
-            
+
             .college-logo-title-container {
                 gap: 2rem;
             }
-            
+
             .pane-content {
                 max-width: 850px;
             }
-            
+
             .pane-logo-bg {
                 opacity: 0.6;
             }
         }
-        
+
         /* Large desktop screens */
         @media (min-width: 1440px) {
             html {
                 font-size: 18px;
             }
-            
+
             .container {
                 max-width: 1400px;
             }
-            
+
             .pane-content {
                 max-width: 900px;
             }
-            
+
             .pane-logo-bg {
                 opacity: 0.65;
             }
         }
-        
+
         /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
             .event-card:hover {
                 transform: none;
             }
-            
+
             .coordinator-box li:hover {
                 transform: none;
             }
-            
+
             .register-btn:hover {
                 transform: none;
             }
-            
+
             .college-logo:hover {
                 transform: none;
             }
-            
+
             .campus:hover {
                 transform: none;
             }
-            
+
             .social-icons a:hover {
                 transform: none !important;
             }
-            
+
             /* Increase tap targets for mobile */
             .event-card,
             .register-btn,
@@ -2309,12 +2823,12 @@
                 min-height: 44px;
                 min-width: 44px;
             }
-            
+
             .event-card h3 i {
                 min-height: 44px;
                 min-width: 44px;
             }
-            
+
             /* Disable hover animations */
             .event-card::before,
             .register-btn::before,
@@ -2325,6 +2839,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Background Elements -->
     <div class="stars" id="stars"></div>
@@ -2332,13 +2847,13 @@
     <div class="tech-elements" id="techElements"></div>
     <div class="particles-container" id="particlesContainer"></div>
     <div class="floating-text-container" id="floatingText"></div>
-    
+
     <!-- Event Detail Pane -->
     <div class="event-detail-pane" id="eventDetailPane">
         <div class="pane-content" id="paneContent">
             <!-- Logo Background Element -->
             <div class="pane-logo-bg" id="paneLogoBg"></div>
-            
+
             <div class="pane-header">
                 <h2 id="paneTitle"><i class="fas fa-brain"></i> Event Details</h2>
                 <button class="close-pane" id="closePane" aria-label="Close">×</button>
@@ -2348,13 +2863,13 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container">
         <!-- College Header with Enhanced Design -->
         <div class="college-header">
             <div class="college-logo-title-container">
-                <img src="ALTSlogo.JPEG" alt="ALITS College Logo" class="college-logo" id="collegeLogo">
-                
+                <img src="ss.JPEG" alt="ALITS College Logo" class="college-logo" id="collegeLogo">
+
                 <!-- College Name Container - Beside Logo -->
                 <div class="college-name-container">
                     <h1 class="college-main-name">Anantha Lakshmi Institute of Technology & Sciences</h1>
@@ -2370,25 +2885,25 @@
                     </h2>
                 </div>
             </div>
-            
+
             <div class="department">Department of Electronics and Communication Engineering</div>
             <div class="campus">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>ALITS Campus, Anantapur, Andhra Pradesh - 515721</span>
             </div>
         </div>
-        
+
         <!-- Event Header - Below College Name -->
         <div class="event-header">
             <h1 class="event-title">E-UDBHAV 2K26</h1>
             <div class="event-subtitle">TECHNICAL FESTIVAL & INNOVATION EXPO</div>
-            
+
             <div class="date-badge">
                 <i class="fas fa-calendar-alt"></i>
                 <span>10th & 11th February 2026</span>
                 <i class="fas fa-clock"></i>
             </div>
-            
+
             <!-- UPDATED GOOGLE FORM LINK -->
             <a href="https://forms.gle/Cue4uKUAfutYsEMc6" target="_blank" class="register-btn" id="mainRegisterBtn">
                 <i class="fas fa-user-plus"></i>
@@ -2396,76 +2911,86 @@
                 <i class="fas fa-external-link-alt"></i>
             </a>
         </div>
-        
+
         <!-- Main Content -->
         <div class="content">
             <h2 class="section-title"><i class="fas fa-info-circle"></i> ABOUT THE EVENT</h2>
-            
+
             <p class="paragraph">
                 The Department of Electronics and Communication Engineering at ALITS proudly presents
-                <span class="highlight">E-UDBHAV 2K26</span>, a two-day ECE Technical Fest aimed at encouraging innovation, enhancing
+                <span class="highlight">E-UDBHAV 2K26</span>, a two-day ECE Technical Fest aimed at encouraging
+                innovation, enhancing
                 technical competence, and promoting collaborative learning among students. The fest
-                will be conducted on <span class="highlight">10th and 11th February 2026</span> at the <span class="highlight">ECE Block, ALITS Campus</span>.
+                will be conducted on <span class="highlight">10th and 11th February 2026</span> at the <span
+                    class="highlight">ECE Block, ALITS Campus</span>.
             </p>
-            
+
             <h2 class="section-title"><i class="fas fa-trophy"></i> TECHNICAL EVENTS</h2>
-            
+
             <div class="event-highlights">
                 <!-- Event Cards with data-event attributes -->
                 <div class="event-card" data-event="knowledge-knockout">
                     <h3><i class="fas fa-brain"></i> E-Nijia's </h3>
-                    <p>Technical quiz competition to test your electronics and communication knowledge. Teams of 2-3 members compete in multiple rounds with increasing difficulty.</p>
+                    <p>Technical quiz competition to test your electronics and communication knowledge. Teams of 2-3
+                        members compete in multiple rounds with increasing difficulty.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
-                
+
                 <div class="event-card" data-event="spintron">
                     <h3><i class="fas fa-atom"></i> Project Expo </h3>
-                    <p>Concept-based ECE event focusing on core electronics principles and applications. Solve real-world engineering problems with innovative solutions.</p>
+                    <p>Concept-based ECE event focusing on core electronics principles and applications. Solve
+                        real-world engineering problems with innovative solutions.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
-                
+
                 <div class="event-card" data-event="powerpoint">
                     <h3><i class="fas fa-desktop"></i> Power Point Presentation</h3>
-                    <p>Showcase your technical ideas through compelling presentations. Categories include emerging technologies, innovative projects, and research findings.</p>
+                    <p>Showcase your technical ideas through compelling presentations. Categories include emerging
+                        technologies, innovative projects, and research findings.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
-                
+
                 <div class="event-card" data-event="electrotalk">
                     <h3><i class="fas fa-paint-brush"></i> Paper Presentation </h3>
-                    <p>Display your research and innovative ideas through creative posters. Evaluation based on content quality, design aesthetics, and presentation skills.</p>
+                    <p>Display your research and innovative ideas through creative posters. Evaluation based on content
+                        quality, design aesthetics, and presentation skills.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
-                
+
                 <div class="event-card" data-event="circuit-safari">
                     <h3><i class="fas fa-bolt"></i> Circuit Hunt </h3>
-                    <p>Circuit design and debugging challenge for aspiring electronics engineers. Individual and team categories with hardware components provided.</p>
+                    <p>Circuit design and debugging challenge for aspiring electronics engineers. Individual and team
+                        categories with hardware components provided.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
-                
+
                 <div class="event-card" data-event="treasure-hunt">
                     <h3><i class="fas fa-search"></i> Technical Treasure Hunt</h3>
-                    <p>Solve technical puzzles to find hidden treasures across the campus. Combines technical knowledge with teamwork and problem-solving skills.</p>
+                    <p>Solve technical puzzles to find hidden treasures across the campus. Combines technical knowledge
+                        with teamwork and problem-solving skills.</p>
                     <div class="read-more">Tap for full details <i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
-            
+
             <h2 class="section-title"><i class="fas fa-calendar-day"></i> EVENT SCHEDULE</h2>
-            
+
             <p class="paragraph">
-                On <span class="highlight">10th February</span>, a wide range of engaging technical events will be organized, including
+                On <span class="highlight">10th February</span>, a wide range of engaging technical events will be
+                organized, including
                 Knowledge Knockout (technical quiz), Spintron (concept-based ECE event), Power Point
                 Presentation, Electro Talk, Circuit Safari (circuit design and debugging),
                 Technical Treasure Hunt, and Riddles Crypt, which focuses on logical reasoning and
                 technical problem-solving skills.
             </p>
-            
+
             <p class="paragraph">
-                The schedule for <span class="highlight">11th February</span> includes final rounds of selected events, followed by the
+                The schedule for <span class="highlight">11th February</span> includes final rounds of selected events,
+                followed by the
                 valedictory function, prize distribution ceremony, and cultural activities, providing a
                 perfect blend of technical excellence and entertainment. Workshops from industry experts
                 will also be conducted throughout the day.
             </p>
-            
+
             <!-- === UPDATED SPOT REGISTRATION NOTIFICATION === -->
             <div class="spot-registration">
                 <div class="spot-header">
@@ -2476,26 +3001,29 @@
                         <span>SPOT REGISTRATION</span> AVAILABLE!
                     </div>
                 </div>
-                
+
                 <div class="spot-content">
-                    <p>Missed the online registration? No worries! We offer <strong>spot registration</strong> at the venue on event day.</p>
-                    
+                    <p>Missed the online registration? No worries! We offer <strong>spot registration</strong> at the
+                        venue on event day.</p>
+
                     <div class="spot-highlight">
                         <i class="fas fa-info-circle"></i>
                         <p><strong>Date:</strong> 10th February 2026</p>
                     </div>
-                    
+
                     <div class="spot-highlight">
                         <i class="fas fa-map-marker-alt"></i>
                         <p><strong>Venue:</strong> A-Block Reception Hall, ALITS Campus</p>
                     </div>
-                    
-                    <p><strong>Spot Registration Fee:</strong> ₹200 per event (includes all benefits of pre-registration)</p>
+
+                    <p><strong>Spot Registration Fee:</strong> ₹200 per event (includes all benefits of
+                        pre-registration)</p>
                     <p><strong>Timings:</strong> 9:00 AM - 11:00 AM<br>
-                    <strong>Requirements:</strong> College ID Card & Registration Fee</p>
+                        <strong>Requirements:</strong> College ID Card & Registration Fee
+                    </p>
                 </div>
             </div>
-            
+
             <div class="participation-info" id="register">
                 <h3><i class="fas fa-user-friends"></i> PARTICIPATION DETAILS</h3>
                 <p>
@@ -2503,24 +3031,24 @@
                     from all branches and colleges are welcome to participate. Certificates will be provided
                     to all participants, and attractive prizes will be awarded to the winners and top teams.
                 </p>
-                
+
                 <div class="event-details-grid">
                     <div class="detail-box">
                         <h4><i class="fas fa-money-bill-wave"></i> Registration Fee</h4>
                         <p>₹200 Depending On Event (includes event kit and certificate)</p>
                     </div>
-                    
+
                     <div class="detail-box">
                         <h4><i class="fas fa-users"></i> Team Size</h4>
                         <p>1-2 members depending on event</p>
                     </div>
-                    
+
                     <div class="detail-box">
                         <h4><i class="fas fa-calendar-times"></i> Last Date</h4>
                         <p>7th February 2026</p>
                     </div>
                 </div>
-                
+
                 <!-- UPDATED GOOGLE FORM LINK -->
                 <a href="https://forms.gle/Cue4uKUAfutYsEMc6" target="_blank" class="register-btn">
                     <i class="fab fa-google"></i>
@@ -2528,9 +3056,9 @@
                     <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
-            
+
             <h2 class="section-title"><i class="fas fa-handshake"></i> CO-ORDINATORS</h2>
-            
+
             <div class="coordinators">
                 <div class="coordinator-box">
                     <h3><i class="fas fa-chalkboard-teacher"></i> STAFF CO-ORDINATORS</h3>
@@ -2544,7 +3072,7 @@
                         <li>Mrs. P. Chandana - Technical Head</li>
                     </ul>
                 </div>
-                
+
                 <div class="coordinator-box">
                     <h3><i class="fas fa-users"></i> STUDENT CO-ORDINATORS</h3>
                     <ul>
@@ -2558,51 +3086,46 @@
                     </ul>
                 </div>
             </div>
-            
+
             <p class="paragraph">
                 All interested and enthusiastic students are cordially invited to register and be a part of
-                <span class="highlight">E-UDBHAV 2K26</span> and experience a celebration of technology, creativity, and innovation.
+                <span class="highlight">E-UDBHAV 2K26</span> and experience a celebration of technology, creativity, and
+                innovation.
                 Join us for an unforgettable journey into the world of electronics and communication engineering!
                 Don't miss this opportunity to showcase your skills, learn from experts, and network with peers.
             </p>
         </div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <p class="text-center">
                 <i class="fas fa-graduation-cap"></i> Department of Electronics and Communication Engineering
             </p>
             <p class="text-center">
-                <i class="fas fa-envelope"></i> chennakeshavamandla4@gmail.com 
+                <i class="fas fa-envelope"></i> chennakeshavamandla4@gmail.com
                 <span class="d-inline-block mx-2">|</span>
                 <i class="fas fa-phone"></i> +91-9392519212
             </p>
             <p class="text-center">
                 <i class="fas fa-map-marker-alt"></i> ECE Block, ALITS Campus, Anantapur, Andhra Pradesh - 515721
             </p>
-            
+
             <!-- Enhanced Social Media Icons -->
             <div class="social-icons">
-                <a href="https://wa.me/919392519212?text=Hello%20I%20would%20like%20to%20contact%20you" 
-                   target="_blank" 
-                   aria-label="WhatsApp"
-                   class="whatsapp-icon">
+                <a href="https://wa.me/919392519212?text=Hello%20I%20would%20like%20to%20contact%20you" target="_blank"
+                    aria-label="WhatsApp" class="whatsapp-icon">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/e_udbhav_2k26?igsh=NmkzeDA2eWc0d3Y3" 
-                   target="_blank" 
-                   aria-label="Instagram"
-                   class="instagram-icon">
+                <a href="https://www.instagram.com/e_udbhav_2k26?igsh=NmkzeDA2eWc0d3Y3" target="_blank"
+                    aria-label="Instagram" class="instagram-icon">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://youtube.com/@shabb490?si=9hkvhrCeYkDHneUz" 
-                   target="_blank" 
-                   aria-label="YouTube"
-                   class="youtube-icon">
+                <a href="https://youtube.com/@shabb490?si=9hkvhrCeYkDHneUz" target="_blank" aria-label="YouTube"
+                    class="youtube-icon">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
-            
+
             <p class="text-center mt-3">
                 © 2026 E-UDBHAV 2K26 | ALITS, Anantapur. All Rights Reserved.
             </p>
@@ -2611,12 +3134,12 @@
             </p>
         </div>
     </div>
-    
+
     <!-- Scroll to Top Button -->
     <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    
+
     <script>
         // Event data for each event
         const eventDetails = {
@@ -2652,7 +3175,7 @@
                 prizes: 'Winners for Merit Certificates and All participants receive Participation certificates.',
                 timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
-            
+
             'spintron': {
                 title: 'Project Expo (Spintron)',
                 icon: 'fa-atom',
@@ -2682,7 +3205,7 @@
                 prizes: 'Winners for Merit Certificates and All participants receive Participation certificates ',
                 timing: '10th Feb: 2:30 PM - 4:00 PM '
             },
-            
+
             'powerpoint': {
                 title: 'Power Point Presentation',
                 icon: 'fa-desktop',
@@ -2712,7 +3235,7 @@
                 prizes: 'Winners for Merit Certificates and All participants receive Participation certificates',
                 timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
-            
+
             'electrotalk': {
                 title: 'Poster presnetation (Electro Talk)',
                 icon: 'fa-paint-brush',
@@ -2742,7 +3265,7 @@
                 prizes: 'Winners for Merit Certificates and All participants receive Participation certificates',
                 timing: '10th Feb:  2:30 PM - 4:00 PM '
             },
-            
+
             'circuit-safari': {
                 title: 'Circuit Hunt (Circuit Safari)',
                 icon: 'fa-bolt',
@@ -2771,7 +3294,7 @@
                 prizes: 'Merit Cerrtificate and Participation Certificate',
                 timing: '10th Feb: 2:30 PM - 4:00 PM '
             },
-            
+
             'treasure-hunt': {
                 title: 'Technical Treasure Hunt',
                 icon: 'fa-search',
@@ -2810,21 +3333,21 @@
         function createStars() {
             const starsContainer = document.getElementById('stars');
             const starCount = 100;
-            
+
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
-                
+
                 const size = Math.random() * 3 + 1;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
-                
+
                 star.style.left = `${Math.random() * 100}%`;
                 star.style.top = `${Math.random() * 100}%`;
-                
+
                 const duration = Math.random() * 5 + 3;
                 star.style.setProperty('--duration', `${duration}s`);
-                
+
                 starsContainer.appendChild(star);
             }
         }
@@ -2834,26 +3357,26 @@
             const container = document.getElementById('floatingText');
             const texts = ['E-UDBHAV', '2K26', 'TECH FEST', 'INNOVATION', 'ELECTRONICS', 'COMMUNICATION', 'ALITS', 'ECE'];
             const count = 15;
-            
+
             for (let i = 0; i < count; i++) {
                 const text = document.createElement('div');
                 text.classList.add('floating-text');
                 text.textContent = texts[Math.floor(Math.random() * texts.length)];
-                
+
                 text.style.left = `${Math.random() * 100}%`;
                 text.style.fontSize = `${Math.random() * 1 + 0.8}rem`;
-                
+
                 const delay = Math.random() * 20;
                 const duration = Math.random() * 20 + 20;
                 text.style.animationDelay = `${delay}s`;
                 text.style.animationDuration = `${duration}s`;
-                
+
                 const opacity = Math.random() * 0.1 + 0.05;
                 text.style.opacity = opacity;
-                
+
                 const colors = ['var(--neon-blue)', 'var(--highlight)', 'var(--neon-pink)'];
                 text.style.color = colors[Math.floor(Math.random() * colors.length)];
-                
+
                 container.appendChild(text);
             }
         }
@@ -2863,57 +3386,57 @@
             const container = document.getElementById('techElements');
             const icons = ['fa-microchip', 'fa-bolt', 'fa-satellite', 'fa-wifi', 'fa-robot', 'fa-code', 'fa-calculator', 'fa-memory', 'fa-server', 'fa-network-wired'];
             const count = 30;
-            
+
             container.innerHTML = '';
-            
+
             for (let i = 0; i < count; i++) {
                 const element = document.createElement('div');
                 element.classList.add('tech-element');
                 element.innerHTML = `<i class="fas ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
-                
+
                 element.style.left = `${Math.random() * 100}%`;
                 element.style.fontSize = `${(Math.random() * 2 + 0.8)}rem`;
-                
+
                 const delay = Math.random() * 20;
                 const duration = Math.random() * 20 + 20;
                 element.style.animationDelay = `${delay}s`;
                 element.style.animationDuration = `${duration}s`;
-                
+
                 const colors = ['var(--neon-blue)', 'var(--highlight)', 'var(--neon-pink)', 'var(--highlight3)'];
                 element.style.color = colors[Math.floor(Math.random() * colors.length)];
-                
+
                 container.appendChild(element);
             }
         }
-        
+
         // Enhanced: Create glowing particles
         function createParticles() {
             const container = document.getElementById('particlesContainer');
             const particleCount = 40;
-            
+
             container.innerHTML = '';
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
-                
+
                 const maxSize = window.innerWidth < 768 ? 10 : 20;
                 const size = Math.random() * maxSize + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
-                
+
                 particle.style.left = `${Math.random() * 100}%`;
-                
+
                 const delay = Math.random() * 15;
                 const duration = Math.random() * 15 + 10;
                 particle.style.animationDelay = `${delay}s`;
                 particle.style.animationDuration = `${duration}s`;
-                
+
                 const colors = ['#00e5ff', '#ff4081', '#7c4dff', '#ff9800', '#ff5722'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
                 particle.style.boxShadow = `0 0 20px ${color}, 0 0 40px ${color}`;
-                
+
                 container.appendChild(particle);
             }
         }
@@ -2930,10 +3453,10 @@
         function initTypewriterEffect() {
             const eventTitle = document.querySelector('.event-title');
             if (!eventTitle) return;
-            
+
             const originalText = eventTitle.textContent;
             eventTitle.textContent = '';
-            
+
             let i = 0;
             function typeWriter() {
                 if (i < originalText.length) {
@@ -2949,11 +3472,11 @@
                     }
                 }
             }
-            
+
             // Start immediately - removed loading delay
             setTimeout(typeWriter, 1500);
         }
-        
+
         // NEW: Add ripple effect CSS
         function addRippleStyles() {
             const style = document.createElement('style');
@@ -2993,7 +3516,7 @@
             `;
             document.head.appendChild(style);
         }
-        
+
         // Enhanced: Update Google Form links
         function updateGoogleFormLinks() {
             const registrationButtons = document.querySelectorAll('.register-btn');
@@ -3006,7 +3529,7 @@
         function adjustForScreenSize() {
             const screenWidth = window.innerWidth;
             const html = document.documentElement;
-            
+
             if (screenWidth < 480) {
                 html.style.setProperty('--font-scale', '0.85');
             } else if (screenWidth < 768) {
@@ -3023,14 +3546,14 @@
         // Enhanced: Handle logo loading
         function setupLogo() {
             const logoImg = document.getElementById('collegeLogo');
-            
+
             logoImg.style.opacity = '0.8';
-            
-            logoImg.onload = function() {
+
+            logoImg.onload = function () {
                 this.style.opacity = '1';
             };
-            
-            logoImg.onerror = function() {
+
+            logoImg.onerror = function () {
                 const fallbackHTML = `
                     <div style="width: clamp(80px, 12vw, 120px); height: clamp(80px, 12vw, 120px); display: flex; align-items: center; justify-content: center; 
                          background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)); border-radius: 25%; border: 3px solid rgba(0, 229, 255, 0.4);
@@ -3040,16 +3563,16 @@
                         <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); transform: rotate(45deg); animation: logoShine 6s infinite linear;"></div>
                     </div>
                 `;
-                
+
                 const logoDiv = document.createElement('div');
                 logoDiv.innerHTML = fallbackHTML;
                 logoImg.parentNode.replaceChild(logoDiv.firstChild, logoImg);
             };
-            
+
             // Add click effect to logo
             const logoElement = document.querySelector('.college-logo');
             if (logoElement) {
-                logoElement.addEventListener('click', function(e) {
+                logoElement.addEventListener('click', function (e) {
                     const ripple = document.createElement('div');
                     ripple.style.cssText = `
                         position: absolute;
@@ -3060,18 +3583,18 @@
                         pointer-events: none;
                         z-index: 3;
                     `;
-                    
+
                     const rect = this.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height);
                     ripple.style.width = ripple.style.height = `${size}px`;
                     ripple.style.left = '0';
                     ripple.style.top = '0';
-                    
+
                     this.style.position = 'relative';
                     this.appendChild(ripple);
-                    
+
                     setTimeout(() => ripple.remove(), 600);
-                    
+
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -3079,7 +3602,7 @@
                 });
             }
         }
-        
+
         // Enhanced: Event pane functionality
         function setupEventPanes() {
             const eventCards = document.querySelectorAll('.event-card');
@@ -3088,7 +3611,7 @@
             const paneTitle = document.getElementById('paneTitle');
             const paneBody = document.getElementById('paneBody');
             const paneLogoBg = document.getElementById('paneLogoBg');
-            
+
             // Preload all logo images
             const preloadedLogos = {};
             Object.keys(eventDetails).forEach(eventId => {
@@ -3097,34 +3620,34 @@
                 img.src = logoUrl;
                 preloadedLogos[eventId] = img;
             });
-            
+
             eventCards.forEach(card => {
-                card.addEventListener('click', function(e) {
+                card.addEventListener('click', function (e) {
                     if (window.innerWidth < 768) {
                         e.preventDefault();
                         e.stopPropagation();
                     }
-                    
+
                     const eventId = this.getAttribute('data-event');
                     const eventData = eventDetails[eventId];
-                    
+
                     if (eventData) {
                         paneTitle.innerHTML = `<i class="fas ${eventData.icon}"></i> ${eventData.title}`;
-                        
+
                         // Set the background logo
                         const logoUrl = eventData.logo;
-                        
+
                         paneLogoBg.style.backgroundImage = `url('${logoUrl}')`;
                         paneLogoBg.style.backgroundSize = 'contain';
                         paneLogoBg.style.backgroundPosition = 'center';
                         paneLogoBg.style.backgroundRepeat = 'no-repeat';
-                        
+
                         let logoOpacity = 0.6;
-                        
+
                         if (window.innerWidth < 1024) logoOpacity = 0.55;
                         if (window.innerWidth < 768) logoOpacity = 0.5;
                         if (window.innerWidth < 480) logoOpacity = 0.45;
-                        
+
                         if (preloadedLogos[eventId]) {
                             const img = preloadedLogos[eventId];
                             if (img.complete && img.naturalWidth !== 0) {
@@ -3134,13 +3657,13 @@
                                 paneLogoBg.style.filter = 'brightness(1.2) contrast(1.3) saturate(1.1)';
                             }
                         }
-                        
+
                         paneLogoBg.style.opacity = logoOpacity;
                         paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1.05)';
                         setTimeout(() => {
                             paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
                         }, 300);
-                        
+
                         let contentHTML = `
                             <p style="color: var(--neon-blue); margin-bottom: 1.5rem; font-size: 1.2em; text-align: center; font-weight: 500; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); background: rgba(0, 0, 0, 0.4); padding: 1rem; border-radius: 0.5rem;">
                                 ${eventData.description}
@@ -3161,20 +3684,20 @@
                                 </div>
                             </div>
                         `;
-                        
+
                         eventData.details.forEach(detail => {
                             contentHTML += `
                                 <h3><i class="fas fa-info-circle" style="color: var(--highlight);"></i> ${detail.title}</h3>
                                 <p style="background: rgba(0, 0, 0, 0.4); padding: 1rem; border-radius: 0.5rem; border-left: 3px solid var(--neon-blue);">${detail.content}</p>
                             `;
                         });
-                        
+
                         contentHTML += `<h3><i class="fas fa-clipboard-list" style="color: var(--highlight);"></i> Rules & Guidelines</h3><ul>`;
                         eventData.rules.forEach(rule => {
                             contentHTML += `<li style="background: rgba(0, 0, 0, 0.3); margin-bottom: 0.5rem; padding: 0.75rem; border-radius: 0.5rem; border-left: 3px solid var(--highlight);">${rule}</li>`;
                         });
                         contentHTML += `</ul>`;
-                        
+
                         contentHTML += `
                             <div style="margin-top: 2rem; padding: 1.25rem; background: linear-gradient(135deg, rgba(255, 152, 0, 0.25), rgba(255, 87, 34, 0.25)); 
                                  border-radius: 0.75rem; border-left: 5px solid var(--highlight); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); backdrop-filter: blur(5px);">
@@ -3187,29 +3710,29 @@
                                 </p>
                             </div>
                         `;
-                        
+
                         paneBody.innerHTML = contentHTML;
-                        
+
                         pane.classList.add('active');
                         document.body.style.overflow = 'hidden';
                         document.documentElement.style.overflow = 'hidden';
-                        
+
                         paneBody.scrollTop = 0;
                     }
                 });
-                
+
                 if ('ontouchstart' in window) {
-                    card.addEventListener('touchstart', function() {
+                    card.addEventListener('touchstart', function () {
                         this.style.opacity = '0.8';
                     });
-                    
-                    card.addEventListener('touchend', function() {
+
+                    card.addEventListener('touchend', function () {
                         this.style.opacity = '1';
                     });
                 }
             });
-            
-            closeBtn.addEventListener('click', function() {
+
+            closeBtn.addEventListener('click', function () {
                 pane.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 document.documentElement.style.overflow = 'auto';
@@ -3218,8 +3741,8 @@
                 paneLogoBg.style.transform = 'translate(-50%, -50%) scale(1)';
                 paneLogoBg.style.filter = 'brightness(1.2) contrast(1.3) saturate(1.1)';
             });
-            
-            pane.addEventListener('click', function(e) {
+
+            pane.addEventListener('click', function (e) {
                 if (e.target === pane) {
                     pane.classList.remove('active');
                     document.body.style.overflow = 'auto';
@@ -3230,8 +3753,8 @@
                     paneLogoBg.style.filter = 'brightness(1.2) contrast(1.3) saturate(1.1)';
                 }
             });
-            
-            document.addEventListener('keydown', function(e) {
+
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && pane.classList.contains('active')) {
                     pane.classList.remove('active');
                     document.body.style.overflow = 'auto';
@@ -3243,10 +3766,10 @@
                 }
             });
         }
-        
+
         // Enhanced: Scroll to top functionality
         const scrollTopBtn = document.getElementById('scrollTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 scrollTopBtn.classList.add('active');
@@ -3254,51 +3777,51 @@
                 scrollTopBtn.classList.remove('active');
             }
         });
-        
+
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        
+
         // Enhanced: Animate elements on scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.paragraph, .event-card, .coordinator-box, .spot-registration, .detail-box, .social-icons a');
-            
+
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
-                
+
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
         }
-        
+
         // Enhanced: Registration button functionality
         function setupRegistrationButtons() {
             const registerButtons = document.querySelectorAll('.register-btn');
-            
+
             registerButtons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.addEventListener('click', function (e) {
                     if (!this.getAttribute('href')) {
                         e.preventDefault();
-                        
+
                         const ripple = document.createElement('span');
                         const rect = this.getBoundingClientRect();
                         const size = Math.max(rect.width, rect.height);
                         const x = e.clientX - rect.left - size / 2;
                         const y = e.clientY - rect.top - size / 2;
-                        
+
                         ripple.style.width = ripple.style.height = `${size}px`;
                         ripple.style.left = `${x}px`;
                         ripple.style.top = `${y}px`;
                         ripple.classList.add('ripple');
-                        
+
                         this.appendChild(ripple);
-                        
+
                         setTimeout(() => {
                             ripple.remove();
                         }, 600);
@@ -3306,7 +3829,7 @@
                 });
             });
         }
-        
+
         // NEW: Handle orientation change
         function handleOrientationChange() {
             adjustForScreenSize();
@@ -3315,7 +3838,7 @@
             createParticles();
             createFloatingText();
         }
-        
+
         // NEW: Initialize everything - REMOVED LOADING SCREEN DELAYS
         function init() {
             adjustForScreenSize();
@@ -3330,17 +3853,17 @@
             setupRegistrationButtons();
             addRippleStyles();
             initTypewriterEffect();
-            
+
             // Start animations immediately - REMOVED loading delay
             setTimeout(animateOnScroll, 100);
-            
+
             // Initialize scroll animations
             window.addEventListener('scroll', animateOnScroll);
         }
-        
+
         // Initialize immediately when DOM is ready
         document.addEventListener('DOMContentLoaded', init);
-        
+
         // Handle resize
         let resizeTimeout;
         window.addEventListener('resize', () => {
@@ -3353,9 +3876,9 @@
                 createFloatingText();
             }, 250);
         });
-        
+
         window.addEventListener('orientationchange', handleOrientationChange);
-        
+
         // Final adjustments after load
         window.addEventListener('load', () => {
             setTimeout(adjustForScreenSize, 100);
@@ -3363,4 +3886,5 @@
         });
     </script>
 </body>
+
 </html>
